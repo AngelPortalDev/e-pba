@@ -1,0 +1,36 @@
+<?php
+
+return array (
+  'line_1' => 'E-Ascencia',
+  'line_2' => 'About Us',
+  'line_3' => 'Our Teachers',
+  'line_4' => 'Contact Us',
+  'line_5' => 'Approved Partners',
+
+  'line_6' => 'Course',
+  'line_7' => 'Award',
+  'line_8' => 'Post Graduate Certificates',
+  'line_9' => 'Diploma',
+  'line_10' => 'Masters',
+  'line_11' => 'DBA',
+
+  'line_12' => 'Support',
+  'line_13' => 'Terms and Conditions',
+  'line_14' => 'Privacy Policy',
+  'line_15' => 'FAQ\'s',
+  'line_16' => 'Cookies',
+  'line_17' => 'Get in Touch',
+  'line_18' => 'Contact:',
+  'line_19' => 'info@eascencia.mt',
+  'line_20' => 'Support:',
+  'line_21' => 'support@eascencia.mt',
+  'line_22' => '+91 7400177951',
+  'line_23' => 'E-Ascencia, Inc. All Rights Reserved.',
+  'line_24' => 'ATHE Level 3',
+  'line_25' => 'ATHE Level 4',
+  'line_26' => 'ATHE Level 5',
+  'line_27' => 'ATHE Level 7 Extended Diplomas',
+  'line_28' => 'ATHE Level 7 Diplomas',
+  'line_29' => 'Extended Diplomas',
+  'line_30' => 'ATHE Diplomas',
+);
