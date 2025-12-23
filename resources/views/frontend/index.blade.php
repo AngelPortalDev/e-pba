@@ -486,6 +486,7 @@
                                     </div>
 
 
+                                    
                                 </div>
                                 <div class="card-footer" style="min-height: 65px">
                                     <div class="row align-items-center g-0">
