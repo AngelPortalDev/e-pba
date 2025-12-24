@@ -16,7 +16,7 @@
 
 
         {{-- <title>{{ config('app.name', 'E-Ascencia: Online Learning Portal') }}</title> --}}
-        <title>E-PBA</title>
+        <title>E-Ascencia</title>
         <!-- Favicon icon-->
 
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/images/favicon/favicon.ico')}}" />
@@ -285,7 +285,7 @@
 
 .save_loader-text {
   font-size: 24px;
-  color: #a30a1b;
+  color: #2b3990;
   margin-bottom: 20px;
   align-self: center;
   font-weight: bold;
@@ -297,8 +297,8 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-          radial-gradient(farthest-side, #a30a1b 94%, #0000) top/8px 8px no-repeat,
-          conic-gradient(#0000 30%, #a30a1b);
+          radial-gradient(farthest-side, #2b3990 94%, #0000) top/8px 8px no-repeat,
+          conic-gradient(#0000 30%, #2b3990);
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
   animation: l13 1s infinite linear;
   margin-top: 10px;
@@ -311,10 +311,10 @@
     }
 }
 .document_loader_bar{
-    width: 300px;  /* Width of the loader */
-    height: 300px;  /* Height of the loader */
+    width: 350px;  /* Width of the loader */
+    height: 310px;  /* Height of the loader */
     aspect-ratio: 1; /* Maintain a square aspect ratio */
-    border-radius: 0%; /* Makes the loader circular */
+    border-radius: 50%; /* Makes the loader circular */
     background-image: url('../frontend/images/document-validation-low.gif'); /* Path to your image */
     background-size: contain; /* Ensure the image fits within the circle */
     background-repeat: no-repeat; /* Prevents repeating the image */
@@ -342,14 +342,14 @@
 
 
 .swal-button{
-  background-color: #a30a1b ;
+  background-color: #2b3990;
 }
 .swal-button-container{
   display: flex;
   justify-content: center;
 }
 .swal-button:hover{
-  background-color: #c51426 !important;
+  background-color: #2b3990 !important;
 }
 .swal-footer{
   display: flex;
@@ -454,12 +454,6 @@ body {
     top: 0px !important;
     position: relative !important;
 } */
- .btn-scroll-top:after{
-  color: #a30a1b !important;
- }
- .btn-scroll-top svg.progress-square path{
-  stroke: #a30a1b !important;
- }
         </style>
 
 <body>
@@ -591,7 +585,7 @@ body {
 
 <!-- Scroll top -->
 <div class="btn-scroll-top">
-    <svg class="progress-square svg-content" width="100%" height="100%" fill="#a30a1b"  viewBox="0 0 40 40">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
         <path
             d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
     </svg>

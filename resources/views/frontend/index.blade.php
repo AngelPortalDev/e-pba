@@ -49,18 +49,6 @@
     } */
 
     /* input[type="search"]::-webkit-search-results-decoration { display: none; } */
-
-    .course_category_icons{
-        height: 35px;
-        width:auto;
-    }
-    .course_category_icons_4{
-        height: 25px;
-        width:auto;
-    }
-    .hero-section{
-        background-color: #002654 !important;
-    }
 </style>
 
 <div id="customModal" class="custom-modal-swal" style="display: none;">
@@ -130,12 +118,12 @@
     $allowedRoles = ['institute', 'superadmin', 'admin', 'instructor', 'sub-instructor'];
 @endphp
 <!-- Slider Content -->
-<section class="hero-section" style="border-bottom: 1px solid #f4f4f4;">
+<section class="bg-primary hero-section">
     <div class="container">
         <!-- Hero Section -->
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                {{-- <div class="carousel-item active" data-bs-interval="4000">
+                <div class="carousel-item active" data-bs-interval="4000">
                     <div class="row align-items-center g-0">
                         <div class="col-xl-5 col-lg-6 col-md-12 ">
                             <div class="py-7 py-lg-0">
@@ -144,31 +132,31 @@
 
                                 @if(!Auth::check())
                                     <a href="login-view" class="btn btn-dark btn-main-1 me-1 bannerButton">{{ __('static.sliderbtn1')}}</a>
-                                    
+                                    {{-- <a href="#" class="btn btn-main-2 bannerButton">Learn More</a> --}}
                                 @endif
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/img-4.webp') }}" alt="Student using a laptop for online learning on E-Ascencia's platform"
+                            <img src="{{ asset('frontend/images/hero/blockchain_certificate.png') }}" alt="Student using a laptop for online learning on E-Ascencia's platform"
                                 class="img-fluid"/>
                         </div>
                     </div>
-                </div> --}}
-                <div class="carousel-item active" data-bs-interval="4000">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
                     <div class="row align-items-center g-0">
                         <div class="col-xl-5 col-lg-6 col-md-12 ">
                             <div class="py-7 py-lg-0">
                                 <h2 class=" display-4 slide-1-h2 bannerTitle"> {!! html_entity_decode(__('static.index_side2title')) !!}</h2>
                                 <p class="text-white-80 mb-4 lead bannerDescription">{{ __('static.index_side2subtext') }}</p>
 
-                                {{-- @if(!Auth::check())
+                                @if(!Auth::check())
                                     <a href="login-view" class="btn btn-dark btn-main-1 me-1 bannerButton"> {{ __('static.sliderbtn1')}}</a>
                                     <a href="student-enrollment" class="btn btn-main-2 bannerButton">{{ __('static.sliderbtn2')}}</a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/img-1.webp') }}" alt="Student using a laptop for online learning on E-Ascencia's platform"
+                            <img src="{{ asset('frontend/images/hero/hero-img-1-main.webp') }}" alt="Student using a laptop for online learning on E-Ascencia's platform"
                                 class="img-fluid"/>
                         </div>
                     </div>
@@ -185,10 +173,12 @@
                                 @if(!Auth::check())
                                     <a href="login-view" class="btn btn-dark btn-main-1 me-1 bannerButton">{{ __('static.sliderbtn3')}}</a>
                                 @endif
+                                {{-- <a href="#" class="btn  btn-main-2 bannerButton" onclick="return false;">Learn More</a> --}}
+
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/img-2.webp') }}" alt="Inspiring educational journey with Ascencia Malta mentors"
+                            <img src="{{ asset('frontend/images/hero/hero-img-2-main.webp') }}" alt="Inspiring educational journey with Ascencia Malta mentors"
                                 class="img-fluid"/>
                         </div>
                     </div>
@@ -200,18 +190,43 @@
                             <div class="py-7 py-lg-0">
                                 <h2 class=" display-4 slide-3-h2 bannerTitle">{{ __('static.index_side4title') }}
                                 </h2>
-                              <p class="text-white-80 mb-4 lead bannerDescription">{{ __('static.index_side4subtext') }}</p>
-                                {{-- @if(!Auth::check())
+                                <p class="text-white-80 mb-4 lead bannerDescription">{{ __('static.index_side4subtext') }}</p>
+
+                                {{-- <a href="#" class="btn  btn-main-2 bannerButton" onclick="return false;">Learn More</a> --}}
+                                @if(!Auth::check())
                                     <a href="student-enrollment" class="btn btn-dark btn-main-1 me-1 bannerButton">{{ __('static.sliderbtn2')}}</a>
-                                @endif --}}
+                                @endif
+
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/img-1.webp') }}" alt="Accredited programs recognized by the European Qualifications Framework"
+                            <img src="{{ asset('frontend/images/hero/hero-img-3-main.webp') }}" alt="Accredited programs recognized by the European Qualifications Framework"
                                 class="img-fluid"/>
                         </div>
                     </div>
                 </div>
+                 <div class="carousel-item" data-bs-interval="40000">
+                    <div class="row align-items-center g-0">
+                        <div class="col-xl-5 col-lg-6 col-md-12 ">
+                            <div class="py-7 py-lg-0">
+                                <h2 class=" display-4 slide-3-h2 bannerTitle">{{ __('static.index_side5title') }}
+                                </h2>
+                                {{-- <p class="text-white-80 mb-4 lead bannerDescription">{{ __('static.index_side5subtext') }}</p> --}}
+
+                                {{-- <a href="#" class="btn  btn-main-2 bannerButton" onclick="return false;">Learn More</a> --}}
+                                @if(!Auth::check())
+                                    <a href="student-enrollment" class="btn btn-dark btn-main-1 me-1 bannerButton mt-2">{{ __('static.sliderbtn2')}}</a>
+                                @endif
+
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
+                            <img src="{{ asset('frontend/images/hero/hero-img-10.png') }}" alt="Accredited programs recognized by the European Qualifications Framework"
+                                class="img-fluid"/>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <a class="carousel-control-prev banner-carouse-prev" href="#carouselExampleInterval" role="button"
                 data-bs-slide="prev">
@@ -226,7 +241,7 @@
         </div>
     </div>
 </section>
-<section class="bg-red py-4 shadow-sm">
+<section class="bg-white py-4 shadow-sm">
     <div class="container">
 
         <div class="row align-items-center g-0">
@@ -238,7 +253,7 @@
                     </span>
                     <div class="ms-3">
                         <h4 class="mb-0 fw-semibold">{{ __('static.section2tite1') }}</h4>
-                        <p class="mb-0 learning-opportunitie-title {{ app()->getLocale() == 'fr' ? 'french_subtitle' : '' }}" style="color:#ffffff;"> {{ __('static.section2sub1') }}</p>
+                        <p class="mb-0 learning-opportunitie-title {{ app()->getLocale() == 'fr' ? 'french_subtitle' : '' }}">{{ __('static.section2sub1') }}</p>
                     </div>
                 </div>
             </div>
@@ -249,8 +264,8 @@
                         <i class="fe fe-users"></i>
                     </span>
                     <div class="ms-3">
-                        <h4 class="mb-0 fw-semibold" >{{ __('static.section2tite2') }}</h4>
-                        <p class="mb-0" style="color:#ffffff;">{{ __('static.section2sub2') }}</p>
+                        <h4 class="mb-0 fw-semibold">{{ __('static.section2tite2') }}</h4>
+                        <p class="mb-0">{{ __('static.section2sub2') }}</p>
                     </div>
                 </div>
             </div>
@@ -262,7 +277,7 @@
                     </span>
                     <div class="ms-3">
                         <h4 class="mb-0 fw-semibold">{{ __('static.section2tite3') }}</h4>
-                        <p class="mb-0" style="color:#ffffff;">{{ __('static.section2sub3') }}</p>
+                        <p class="mb-0">{{ __('static.section2sub3') }}</p>
                     </div>
                 </div>
             </div>
@@ -272,14 +287,9 @@
 
 
 
-@php
-    $courses = DB::table('course_master')->select('temp_count','course_title','id','selling_price','ects','course_thumbnail_file','course_old_price','course_final_price','scholarship','status','category_id')->where('status','!=','2')->whereNotNull('published_on')->orderBy('category_id','desc')->orderBy('published_on','desc')
-    // ->whereIn('category_id',[1,2,3,4,5,9,10])->limit(4)->get();
-    ->whereIn('category_id',[9,10])->limit(4)->get();
-@endphp
+
 <!-- New on E-Ascencia -->
-@if($courses->isNotEmpty())
-<section class="course-category-tabs-main pt-5 ">
+<section class="course-category-tabs-main pt-5">
     <!-- row -->
     <div class="container mb-lg-3">
         <div class="row">
@@ -289,11 +299,11 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                         <h1 class="mb-1 h1 fw-bold fs-md-3 sectionheading">{{ __('static.section2tite1') }}
                         </h1>
-                        {{-- <small class="promo-code text-primary rounded p-1 promo_code_blink mt-2 mt-md-0 mb-2 mb-md-0">
+                        <small class="promo-code text-primary rounded p-1 promo_code_blink mt-2 mt-md-0 mb-2 mb-md-0">
                             <span class="badge badge-success text-primary badge_icon flickering_text_styling" style="padding: 5px 20px; font-size:19px; user-select: none; white-space:normal; word-break: break-word;">
                                 {!! html_entity_decode(__('static.welcomecode')) !!}
                             </span>
-                        </small> --}}
+                        </small>
                     </div>
                     <p>
                         {{ __('static.subheadingnc') }}
@@ -309,10 +319,10 @@
             $awardCourses =
             getData('course_master',['temp_count','course_title','id','selling_price','ects','course_thumbnail_file','course_old_price','course_final_price','scholarship'],['status'=>3],1,'published_on','desc');
 
+            $courses = DB::table('course_master')->select('temp_count','course_title','id','selling_price','ects','course_thumbnail_file','course_old_price','course_final_price','scholarship','status','category_id')->where('status','!=','2')->whereNotNull('published_on')->orderBy('category_id','desc')->orderBy('published_on','desc')->whereIn('category_id',[1,2,3,4,5])->limit(4)->get();
             @endphp
             @if (Auth::check() && Auth::user()->role =='user')
-                @php $doc_verified = getData('student_doc_verification',['english_level','english_score','identity_is_approved','edu_is_approved'],['student_id'=>Auth::user()->id]);
-                @endphp
+                @php $doc_verified = getData('student_doc_verification',['english_level','english_score','identity_is_approved','edu_is_approved'],['student_id'=>Auth::user()->id]);@endphp
             @endif
 
             @if (isset($courses))
@@ -323,17 +333,17 @@
                     @if (isset($course->category_id) && !empty($course->category_id) && $course->category_id === 1)
                         @php $LINK = route('get-course-details',['course_id'=>base64_encode($course->id)]) ;@endphp
                     @else
-                        @php $LINK = route('get-master-course-details',['course_id'=>base64_encode($course->id)]) ;
-                        @endphp
+                        @php $LINK = route('get-master-course-details',['course_id'=>base64_encode($course->id)]) ;@endphp
                     @endif
                     @if($course->status == '3')
-                        @if (isset($course->category_id) && !empty($course->category_id) && ($course->category_id === 9 || $course->category_id === 10))
+                        @if (isset($course->category_id) && !empty($course->category_id) && $course->category_id === 5)
 
                             <div class="card card-hover">
                                 <a href="{{ route('dba-course-details',['course_id'=>base64_encode($course->id)]) }}">
                                     <img src="{{ Storage::url($course->course_thumbnail_file) }}" alt="course"
                                         class="card-img-top img-fluid" max-height='10px' style="object-fit: cover;" loading="lazy">
                                 </a>
+                                <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <span class="badge bg-info-soft co-category">{{ __('static.DBA') }}</span>
@@ -356,6 +366,7 @@
                                     </div>
 
                                 </div>
+                                <!-- Card Footer -->
                                 <div class="card-footer" style="min-height: 65px">
                                     <div class="row align-items-center g-0">
                                         <div class="col course-price-flex">
@@ -389,7 +400,7 @@
                                                         @else
                                                             <div class="d-flex" style="padding: 0px">
                                                                 <form class="checkoutform">
-                                                                @csrf
+                                                                @csrf <!-- CSRF protection -->
                                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -421,7 +432,7 @@
                                                         @else
                                                             <div class="d-flex" style="padding: 0px">
                                                                 <form class="checkoutform">
-                                                                @csrf
+                                                                @csrf <!-- CSRF protection -->
                                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -440,7 +451,7 @@
                                             @else
                                                 <div class="d-flex" style="padding: 0px">
                                                     <form class="checkoutform">
-                                                    @csrf
+                                                    @csrf <!-- CSRF protection -->
                                                     @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                     <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                     <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -462,10 +473,11 @@
                                     <img src="{{ Storage::url($course->course_thumbnail_file) }}" alt="course"
                                         class="card-img-top img-fluid" max-height='10px' style="object-fit: cover;" loading="lazy">
                                 </a>
+                                <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ? $course->ects : ''}} {{__('static.ECTS')}}</span> @endif
+                                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}} {{__('static.ECTS')}}</span> @endif
                                     </div>
                                         <h4 class="mb-2 text-truncate-line-2 course-title"><a
                                             href="{{$LINK}}"
@@ -475,6 +487,7 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1 promo_code_division">
                                         <span class="text-dark enroll_icon">
                                             <i class="fe fe-user"></i>
+                                            {{-- @php $CountEnrolled = is_enrolled('',$course->id);@endphp {{$CountEnrolled}} Enrolled --}}
                                             @php $CountEnrolled = $course->temp_count;@endphp {{$CountEnrolled}} {{ __('static.Enrolled') }}
                                         </span>
                                         @php $promoCode = getCoursePromoCode($course->id);@endphp
@@ -486,8 +499,8 @@
                                     </div>
 
 
-                                    
                                 </div>
+                                <!-- Card Footer -->
                                 <div class="card-footer" style="min-height: 65px">
                                     <div class="row align-items-center g-0">
                                         <div class="col course-price-flex">
@@ -525,7 +538,7 @@
                                                             @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                                 <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px"/></a>
                                                             @else
-                                                                <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px"/></a>
+                                                                <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px"/></a>
                                                             @endif
                                                             <form class="checkoutform">
                                                                 @csrf
@@ -547,11 +560,11 @@
                                                     @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                         <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px"/></a>
                                                     @else
-                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px"/></a>
+                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px"/></a>
                                                     @endif
 
                                                     <form class="checkoutform">
-                                                    @csrf
+                                                    @csrf <!-- CSRF protection -->
                                                     @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                     <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                     <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -564,9 +577,9 @@
                                                 @endif
                                             @else
                                                 <div class="d-flex">
-                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px"/></a>
+                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px"/></a>
                                                     <form class="checkoutform">
-                                                        @csrf 
+                                                        @csrf <!-- CSRF protection -->
                                                         @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                         <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                         <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -607,16 +620,18 @@
                                 class="card-img-top img-fluid" max-height='10px' style="object-fit: cover;" loading="lazy">
                             </a>
 
+                            <!-- Card Body -->
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ? $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
+                                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
                                 </div>
                                 <h4 class="mb-2 text-truncate-line-2 course-title">
                                         <a href="{{$LINK}}"
                                         class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
                                 </h4>
                             </div>
+                            <!-- Card Footer -->
                             <div class="card-footer" style="min-height: 65px">
                                 <div class="row align-items-center g-0"  style="VISIBILITY: HIDDEN;">
                                     <div class="col course-price-flex">
@@ -627,7 +642,7 @@
                                     </div>
 
                                     <div class="col-auto">
-                                        <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                        <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                         <a class="buy-now">{{ __('static.buynow') }}</a>
                                     </div>
                                 </div>
@@ -646,7 +661,7 @@
         </div>
     </div>
 </section>
-@endif
+
 
 
 
@@ -661,17 +676,20 @@
                     <h1 class="mb-1 h1 fw-bold sectionheading">{{ __('static.discovertopcourse') }}</h1>
                     <p>
                         {{ __('static.subheadingstc') }}
+
                     </p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
+                <!-- Nav tab -->
                 <ul class="nav nav-lb-tab mb-6 bg-gray-200 px-5 rounded-3" id="pills-tab" role="tablist">
-                    {{-- <li class="nav-item" role="presentation">
+                     <!-- nav item -->
+                    <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" href="#pills-all" role="tab"
                             aria-controls="pills-all" aria-selected="false">{{ __('static.All') }}</a>
-                    </li> --}}
+                    </li>
                    
                     @php 
                      $atheLevelData =
@@ -682,12 +700,8 @@
                      ->where('category_id', 7)->values();
                      $athecat8Courses = collect($atheLevelData)
                      ->where('category_id', 8)->values();
-                     $athecat9Courses = collect($atheLevelData)
-                     ->where('category_id', 9)->values();
-                      $athecat10Courses = collect($atheLevelData)
-                     ->where('category_id', 10)->values();
                     @endphp
-                    {{-- @if($athecat6Courses->isNotEmpty())
+                    @if($athecat6Courses->isNotEmpty())
                     <li class="nav-item" role="presentation">
                         <a class="nav-link " id="pills-athe-level3-tab" data-bs-toggle="pill" href="#pills-athe-level3"
                             role="tab" aria-controls="pills-athe-level3" aria-selected="true">
@@ -713,42 +727,28 @@
 
                         </a>
                     </li>
-                    @endif --}}
-                    @if($athecat9Courses->isNotEmpty())
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="pills-athe-level7-tab" data-bs-toggle="pill" href="#pills-athe-level7"
-                            role="tab" aria-controls="pills-athe-level7" aria-selected="true">
-                            {{ __('footer.line_27') }}
-                        </a>
-                    </li>
                     @endif
-                    @if($athecat10Courses->isNotEmpty())
+                     <!-- nav item -->
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-athe-level6-tab" data-bs-toggle="pill" href="#pills-athe-level6"
-                            role="tab" aria-controls="pills-athe-level6" aria-selected="true">
-                            {{ __('footer.line_28') }}
-
-                        </a>
-                    </li>
-                    @endif
-                   
-                    {{-- <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-award-tab" data-bs-toggle="pill" href="#pills-award"
                             role="tab" aria-controls="pills-award" aria-selected="false">
-                            {{ __('static.awards') }}
+                            {{ __('static.Award') }}
 
                         </a>
                     </li>
+                    <!-- nav item -->
                      <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-certificate-tab" data-bs-toggle="pill" href="#pills-certificate"
-                            role="tab" aria-controls="pills-certificate" aria-selected="false"> {{ __('static.certificates') }}</a>
+                            role="tab" aria-controls="pills-certificate" aria-selected="false"> {{ __('static.certificate_name') }}</a>
                     </li>
+                    <!-- nav item -->
                      <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-diploma-tab" data-bs-toggle="pill" href="#pills-diploma"
                             role="tab" aria-controls="pills-diploma" aria-selected="false">
-                            {{ __('static.diplomas') }}
+                            {{ __('static.Diploma') }}
                         </a>
                     </li>
+                    <!-- nav item -->
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-masters-tab" data-bs-toggle="pill" href="#pills-masters"
                             role="tab" aria-controls="pills-masters" aria-selected="true">
@@ -756,19 +756,22 @@
 
                         </a>
                     </li>
+                    <!-- nav item -->
                     <li class="nav-item" role="presentation">
                         <a class="nav-link " id="pills-dba-tab" data-bs-toggle="pill" href="#pills-dba"
                             role="tab" aria-controls="pills-dba" aria-selected="true">
                             {{ __('static.DBA') }}
 
                         </a>
-                    </li> --}}
+                    </li>
 
 
 
                 </ul>
+                <!-- Tab content -->
                 <div class="tab-content" id="pills-tabContent">
-                    {{-- <div class="tab-pane fade" id="pills-dba" role="tabpanel" aria-labelledby="pills-dba-tab">
+
+                    <div class="tab-pane fade" id="pills-dba" role="tabpanel" aria-labelledby="pills-dba-tab">
                         <div class="position-relative">
                             <ul class="controls" id="sliderSixthControls">
                                 <li class="prev">
@@ -787,24 +790,31 @@
                                     @foreach ($dba as $course)
                                     @if($course->status != '2')
                                     <div class="item">
+                                        <!-- Card -->
                                         @if($course->status == '3')
                                             <div class="card card-hover mb-3">
                                                 <a
                                                     href="{{route('dba-course-details',['course_id'=>base64_encode($course->id)])}}"><img
                                                         src="{{ Storage::url($course->course_thumbnail_file) }}"
                                                         alt="course" class="card-img-top object-fit-cover img-fluid fade-in" loading="lazy"></a>
+                                                <!-- Card Body -->
                                                 <div class="card-body">
                                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                                         <span class="badge bg-info-soft co-category">{{ __('static.DBA') }}</span>
-                                                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ?
+                                                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
                                                             $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
                                                     </div>
+                                                    {{-- <h4 class="mb-2 text-truncate-line-2 course-title">
+                                                        <a
+                                                            href="{{route('dba-course-details',['course_id'=>base64_encode($course->id)])}}"
+                                                            class="text-inherit">{{isset($course->course_title) ? htmlspecialchars_decode($course->course_title) : ''}}</a></h4> --}}
                                                     <h4 class="mb-2 text-truncate-line-2 course-title"><a
                                                                     href="{{route('dba-course-details',['course_id'=>base64_encode($course->id)])}}"
                                                                     class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a></h4>
                                                     <div class="d-flex align-items-center justify-content-between mt-1 promo_code_division">
                                                         <span class="text-dark enroll_icon">
                                                             <i class="fe fe-user"></i>
+                                                            {{-- @php $CountEnrolled = is_enrolled('',$course->id);@endphp {{$CountEnrolled}} Enrolle --}}
                                                             @php $CountEnrolled = $course->temp_count;@endphp {{$CountEnrolled}} {{ __('static.Enrolled') }}
                                                         </span>
                                                         @php $promoCode = getCoursePromoCode($course->id);@endphp
@@ -815,6 +825,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
+                                                <!-- Card Footer -->
                                                 <div class="card-footer" style="min-height: 65px">
                                                     <div class="row align-items-center g-0">
                                                         <div class="col course-price-flex">
@@ -851,7 +862,7 @@
                                                                     @else
                                                                         <div class="d-flex">
                                                                             <form class="checkoutform">
-                                                                            @csrf
+                                                                            @csrf <!-- CSRF protection -->
                                                                             @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                             <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                             <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -927,14 +938,19 @@
                                                 <div class="card-body">
                                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                                         <span class="badge bg-info-soft co-category">{{ __('static.DBA') }}</span>
-                                                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ? $course->ects : ''}}
+                                                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}}
                                                             {{__('static.ECTS')}}</span>@endif
                                                     </div>
+                                                    {{-- <h4 class="mb-2 text-truncate-line-2 course-title"><a
+                                                            href="{{route('get-master-course-details',['course_id'=>base64_encode($course->id)])}}"
+                                                            class="text-inherit">{{isset($course->course_title) ? htmlspecialchars_decode($course->course_title) : ''}}</a>
+                                                    </h4> --}}
                                                     <h4 class="mb-2 text-truncate-line-2 course-title"><a
                                                         href="{{route('get-master-course-details',['course_id'=>base64_encode($course->id)])}}"
                                                         class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
                                                 </h4>
                                                 </div>
+                                                <!-- Card Footer -->
                                                 <div class="card-footer" style="min-height: 65px">
                                                     <div class="row align-items-center g-0" style="VISIBILITY: HIDDEN;">
                                                         <div class="col course-price-flex">
@@ -945,6 +961,7 @@
                                                         </div>
 
                                                         <div class="col-auto">
+                                                            {{-- <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a> --}}
                                                             <a class="buy-now">{{ __('static.buynow') }}</a>
                                                         </div>
                                                     </div>
@@ -959,7 +976,7 @@
                                     @endif
                                     @endforeach
                                 @else
-                                    <img src="{{ asset('frontend/images/ComingSoon2.png') }}" alt="Master" class="img-fluid coming-soon-image" loading="lazy"/>
+                                    <img src="{{ asset('frontend/images/ComingSoon.png') }}" alt="Master" class="img-fluid coming-soon-image" loading="lazy"/>
                                 @endif
                             </div>
 
@@ -968,6 +985,7 @@
                             <a href="{{route('dba-courses')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
                         </div>
                     </div>
+                    <!-- Masters Tab Pane -->
                     <div class="tab-pane fade" id="pills-masters" role="tabpanel" aria-labelledby="pills-masters-tab">
                         <div class="position-relative">
                             <ul class="controls" id="sliderFourthControls">
@@ -981,7 +999,7 @@
                             <div class="sliderFourth">
                                 @php
                                 $masters =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'4',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'4',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                                 $categoryMasters = __('static.Masters');
                                 @endphp
                                 @include('frontend.course-card', ['courses' => $masters,'allowedRoles'=>$allowedRoles,'category'=>$categoryMasters])
@@ -993,6 +1011,8 @@
                             <a href="{{route('masters-courses')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
                         </div>
                     </div>
+
+                    <!-- Diploma Tab Pane -->
                     <div class="tab-pane fade" id="pills-diploma" role="tabpanel" aria-labelledby="pills-diploma-tab">
                         <div class="position-relative">
                             <ul class="controls" id="sliderThirdControls">
@@ -1006,7 +1026,8 @@
                             <div class="sliderThird">
                                 @php
                                 $diploma =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'3',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'3',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                // dd($diploma);
                                 $categoryDiploma = __('static.Diploma');
                                 @endphp
                                 @include('frontend.course-card', ['courses' => $diploma,'allowedRoles'=>$allowedRoles,'category'=>$categoryDiploma])
@@ -1016,6 +1037,8 @@
                             <a href="{{route('diploma-courses')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
                         </div>
                     </div>
+
+                    <!-- Certificate tab content -->
                     <div class="tab-pane fade" id="pills-certificate" role="tabpanel" aria-labelledby="pills-certificate-tab">
 
                         <div class="position-relative">
@@ -1030,7 +1053,7 @@
                             <div class="sliderSecond">
                                 @php
                                 $certificate =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'2',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'2',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                                 $categoryCertificate = __('static.certificate_name');
                                 @endphp
 
@@ -1042,6 +1065,8 @@
                             <a href="{{route('post-graduate-certificates')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
                         </div>
                     </div>
+
+                    <!-- Award tab content -->
                     <div class="tab-pane fade" id="pills-award" role="tabpanel" aria-labelledby="pills-award-tab">
 
                         <div class="position-relative">
@@ -1082,15 +1107,17 @@
                                 @if($course->status != '2')
                                 <div class="item">
 
+                                    <!-- Card -->
                                     @if($course->status == '3')
                                     <div class="card card-hover">
                                         <a href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"><img
                                                 src="{{ Storage::url($course->course_thumbnail_file) }}"
                                                 alt="course" class="card-img-top object-fit-cover img-fluid fade-in" loading="lazy"></a>
+                                        <!-- Card Body -->
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
                                                 <span class="badge bg-info-soft co-category">{{ __('static.Award') }}</span>
-                                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ?
+                                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
                                                     $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
                                             </div>
                                             <h4 class="mb-2 text-truncate-line-2 course-title"><a
@@ -1099,6 +1126,7 @@
                                             <div class="d-flex align-items-center justify-content-between mt-1 promo_code_division">
                                                 <span class="text-dark enroll_icon">
                                                     <i class="fe fe-user"></i>
+                                                    {{-- @php $CountEnrolled = is_enrolled('',$course->id);@endphp {{$CountEnrolled}} Enrolled --}}
                                                     @php $CountEnrolled = $course->temp_count;@endphp {{$CountEnrolled}} {{ __('static.Enrolled') }}
                                                 </span>
                                                 @php $promoCode = getCoursePromoCode($course->id);@endphp
@@ -1109,6 +1137,7 @@
                                                     @endif
                                         </div>
                                         </div>
+                                        <!-- Card Footer -->
                                         <div class="card-footer">
                                             <div class="row align-items-center g-0">
                                                 <div class="col course-price-flex">
@@ -1125,6 +1154,7 @@
                                                             $isPaid = is_exist('orders', ['user_id' => Auth::user()->id,'status' => '0','course_id'=> $course->id]);
                                                         @endphp
                                                         @if (isset($isPaid) && !empty($isPaid) && is_numeric($isPaid) &&  $isPaid > 0)
+                                                            {{-- @if(!empty($doc_verified) && $doc_verified[0]->identity_is_approved == "Approved" && $doc_verified[0]->edu_is_approved == "Approved" && $doc_verified[0]->english_score >= 10 ) --}}
                                                             @php
                                                                 $studentCourseMaster = getData('student_course_master',['course_expired_on','exam_attempt_remain','exam_remark'],['user_id' => Auth::user()->id, 'course_id'=> $course->id,'is_deleted'=>'No' ], "", 'created_at');
                                                             @endphp
@@ -1140,10 +1170,10 @@
                                                                 @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                                 <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                                 @else
-                                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                                 @endif
                                                                 <form class="checkoutform">
-                                                                @csrf
+                                                                @csrf <!-- CSRF protection -->
                                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1154,6 +1184,9 @@
                                                                 </form>
                                                             </div>
                                                             @endif
+                                                            {{-- @else
+                                                                <a href="#" class="text-inherit learningVerified playBtnStyle"><i class="fe fe-play btn-outline-primary"></i>Play</a>
+                                                            @endif --}}
                                                         @else
                                                             <div class="d-flex">
                                                                 @php
@@ -1162,10 +1195,10 @@
                                                                 @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                                 <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                                 @else
-                                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
+                                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
                                                                 @endif
                                                                 <form class="checkoutform">
-                                                                @csrf
+                                                                @csrf <!-- CSRF protection -->
                                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1178,9 +1211,9 @@
                                                         @endif
                                                     @else
                                                     <div class="d-flex">
-                                                        <a class="text-inherit addtocart" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                                        <a class="text-inherit addtocart" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                         <form class="checkoutform">
-                                                            @csrf
+                                                            @csrf <!-- CSRF protection -->
                                                             @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                             <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                             <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1219,17 +1252,23 @@
                                             <img src="{{ Storage::url($course->course_thumbnail_file) }}" alt="course"
                                             class="card-img-top object-fit-cover img-fluid fade-in" max-height='10px' loading="lazy">
                                         </a>
+                                        <!-- Card Body -->
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
                                                 <span class="badge bg-info-soft co-category">{{ __('static.Award') }}</span>
-                                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ? $course->ects : ''}}
+                                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}}
                                                     {{__('static.ECTS')}}</span>@endif
                                             </div>
+                                            {{-- <h4 class="mb-2 text-truncate-line-2 course-title"><a
+                                                    href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"
+                                                    class="text-inherit">{{isset($course->course_title) ? htmlspecialchars_decode($course->course_title) : ''}}</a>
+                                            </h4> --}}
                                             <h4 class="mb-2 text-truncate-line-2 course-title"><a
                                                 href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"
                                                 class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
                                         </h4>
                                         </div>
+                                        <!-- Card Footer -->
                                         <div class="card-footer">
                                             <div class="row align-items-center g-0"  style="VISIBILITY: HIDDEN;">
                                                 <div class="col course-price-flex">
@@ -1240,7 +1279,7 @@
                                                 </div>
 
                                                 <div class="col-auto">
-                                                    <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                                    <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                     <a class="buy-now">{{ __('static.buynow') }}</a>
                                                 </div>
                                             </div>
@@ -1263,8 +1302,8 @@
                         <div class="mt-8">
                             <a href="{{route('award-courses')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
                         </div>
-                    </div> --}}
-                    {{-- <div class="tab-pane fade" id="pills-athe-level3" role="tabpanel" aria-labelledby="pills-athe-level3-tab">
+                    </div>
+                    <div class="tab-pane fade" id="pills-athe-level3" role="tabpanel" aria-labelledby="pills-athe-level3-tab">
                         <div class="position-relative">
                             <ul class="controls" id="sliderEightControls">
                                 <li class="prev">
@@ -1277,7 +1316,7 @@
                             <div class="sliderEighth">
                                 @php
                                 $atheLevel3 =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'6',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'6',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                                 $categoryATHE = __('footer.line_24');
                                 @endphp
                                 @include('frontend.course-card', ['courses' => $atheLevel3,'allowedRoles'=>$allowedRoles,'category'=>$categoryATHE])
@@ -1300,7 +1339,7 @@
                             <div class="sliderNineth">
                                 @php
                                 $atheLevel4 =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'7',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'7',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                                 $categoryATHE = __('footer.line_25');
                                 @endphp
                                 @include('frontend.course-card', ['courses' => $atheLevel4,'allowedRoles'=>$allowedRoles,'category'=>$categoryATHE])
@@ -1323,7 +1362,7 @@
                             <div class="sliderTenth">
                                 @php
                                 $atheLevel5 =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'8',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'8',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                                 $categoryATHE = __('footer.line_26');
                                 @endphp
                                 @include('frontend.course-card', ['courses' => $atheLevel5,'allowedRoles'=>$allowedRoles,'category'=>$categoryATHE])
@@ -1332,54 +1371,10 @@
                         <div class="mt-8">
                             <a href="{{route('level-5-course')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
                         </div>
-                    </div> --}}
-                    <div class="tab-pane fade" id="pills-athe-level6" role="tabpanel" aria-labelledby="pills-athe-level6-tab">
-                        <div class="position-relative">
-                            <ul class="controls" id="sliderElevenControls">
-                                <li class="prev">
-                                    <i class="fe fe-chevron-left"></i>
-                                </li>
-                                <li class="next">
-                                    <i class="fe fe-chevron-right"></i>
-                                </li>
-                            </ul>
-                            <div class="sliderEleventh">
-                                @php
-                                $AtheDiploma =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'10',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
-                                $categoryAtheDip = __('footer.line_30');
-                                @endphp
-                                @include('frontend.course-card', ['courses' => $AtheDiploma,'allowedRoles'=>$allowedRoles,'category'=>$categoryAtheDip])
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <a href="{{route('athe-diploma-course')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
-                        </div>
                     </div>
-                    <div class="tab-pane fade show active" id="pills-athe-level7" role="tabpanel" aria-labelledby="pills-athe-level7-tab">
-                        <div class="position-relative">
-                            <ul class="controls" id="sliderTwelveControls">
-                                <li class="prev">
-                                    <i class="fe fe-chevron-left"></i>
-                                </li>
-                                <li class="next">
-                                    <i class="fe fe-chevron-right"></i>
-                                </li>
-                            </ul>
-                            <div class="sliderTwelveth">
-                                @php
-                                $ExtendDiploma =
-                                getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'9',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
-                                $categoryExtend = __('footer.line_29');
-                                @endphp
-                                @include('frontend.course-card', ['courses' => $ExtendDiploma,'allowedRoles'=>$allowedRoles,'category'=>$categoryExtend])
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <a href="{{route('extended-diploma-courses')}}" class="btn btn-outline-primary">{{ __('static.browse_all') }}</a>
-                        </div>
-                    </div>
-                    {{-- <div class="tab-pane fade show" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+
+                    <!-- All Tab Pane -->
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
                         <div class="position-relative">
                             <ul class="controls" id="sliderFifthControls">
                                 <li class="prev">
@@ -1397,10 +1392,10 @@
                                 $customCategoryOrder = [5, 4, 3, 2, 6, 7, 8, 1];
                                 $masterSorted = $master->sort(function ($a, $b) use ($order, $customCategoryOrder) {
                                     if ($a->status == 3 && $b->status != 3) {
-                                        return -1; 
+                                        return -1; // a comes first
                                     }
                                     if ($b->status == 3 && $a->status != 3) {
-                                        return 1; 
+                                        return 1; // b comes first
                                     }
                                     $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
                                     $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
@@ -1411,10 +1406,10 @@
                                         return $b->category_id <=> $a->category_id;
                                     }
                                     if ($aPublishedOn === null) {
-                                        return -1; 
+                                        return -1; // Place null 'published_on' first
                                     }
                                     if ($bPublishedOn === null) {
-                                        return 1; 
+                                        return 1; // Place null 'published_on' first
                                     }
                                     $result = $order === 'asc'
                                         ? $aPublishedOn <=> $bPublishedOn
@@ -1434,6 +1429,7 @@
                                 @foreach ($master as $course)
                                 @if($course->status != '2' )
                                 <div class="item">
+                                    <!-- Card -->
                                     @if($course->status == '3')
                                         <div class="card card-hover mb-3">
                                             @if (isset($course->category_id) && !empty($course->category_id) && $course->category_id === 1)
@@ -1447,18 +1443,41 @@
                                             <a href="{{$LINK}}">
                                             <img src="{{ Storage::url($course->course_thumbnail_file) }}" alt="course"
                                                 class="card-img-top" loading="lazy"></a>
+                                            <!-- Card Body -->
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
+                                                    {{-- @if (isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 1)
+                                                       <span class="badge bg-info-soft co-category">{{ __('static.Award') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 2)
+                                                        <span class="badge bg-info-soft co-category">{{ __('static.Certificate') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 3)
+                                                        <span class="badge bg-info-soft co-category">{{ __('static.Diploma') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 4)
+                                                        <span class="badge bg-info-soft co-category">{{ __('static.Masters') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                        $course->category_id === 5)
+                                                            <span class="badge bg-info-soft co-category">{{ __('static.DBA') }}</span>
+                                                    @endif --}}
                                                     <span class="badge bg-info-soft co-category">{{getCategory($course->category_id) }}</span>
-                                                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ?
+                                                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
                                                         $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
                                                 </div>
-                                                <h4 class="mb-2 text-truncate-line-2 course-title"><a
-                                                    href="{{$LINK}}"
-                                                    class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a></h4>
+
+                                                {{-- <h4 class="mb-2 text-truncate-line-2 course-title"><a
+                                                        href="{{$LINK}}"
+                                                        class="text-inherit">{{isset($course->course_title) ? htmlspecialchars_decode($course->course_title) : ''}}</a></h4> --}}
+
+                                                        <h4 class="mb-2 text-truncate-line-2 course-title"><a
+                                                            href="{{$LINK}}"
+                                                            class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a></h4>
                                                 <div class="d-flex align-items-center justify-content-between mt-1 promo_code_division">
                                                     <span class="text-dark enroll_icon">
                                                         <i class="fe fe-user"></i>
+                                                        {{-- @php $CountEnrolled = is_enrolled('',$course->id);@endphp {{$CountEnrolled}} Enrolled --}}
                                                          @php $CountEnrolled = $course->temp_count;@endphp {{$CountEnrolled}} {{ __('static.Enrolled') }}
                                                     </span>
                                                     @php $promoCode = getCoursePromoCode($course->id);@endphp
@@ -1468,7 +1487,17 @@
                                                         </small>
                                                     @endif
                                                 </div>
+
+                                                {{-- <div class="lh-1 mt-3">
+
+                                                    <span class="fs-6">
+                                                        <i class="fe fe-user color-blue"></i>
+                                                        1200 Enrolled
+                                                    </span>
+
+                                                </div> --}}
                                             </div>
+                                            <!-- Card Footer -->
                                             <div class="card-footer">
                                                 <div class="row align-items-center g-0">
                                                     <div class="col course-price-flex">
@@ -1485,6 +1514,7 @@
                                                     </div>
 
                                                     <div class="col-auto">
+                                                        {{-- <a href="#" class="text-inherit"> --}}
                                                         @if(Auth::check() && in_array(Auth::user()->role, $allowedRoles))
                                                         @elseif (Auth::check() && Auth::user()->role =='user')
                                                             @php
@@ -1513,7 +1543,7 @@
                                                                         @else
                                                                             <div class="d-flex">
                                                                                 <form class="checkoutform">
-                                                                                @csrf
+                                                                                @csrf <!-- CSRF protection -->
                                                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1545,7 +1575,7 @@
                                                                         @else
                                                                             <div class="d-flex">
                                                                                 <form class="checkoutform">
-                                                                                @csrf
+                                                                                @csrf <!-- CSRF protection -->
                                                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1562,6 +1592,7 @@
                                                                 @endif
                                                             @else
                                                                 @if (isset($isPaid) && !empty($isPaid) && is_numeric($isPaid) &&  $isPaid > 0)
+                                                                    {{-- @if(!empty($doc_verified) && $doc_verified[0]->identity_is_approved == "Approved" && $doc_verified[0]->edu_is_approved == "Approved" && $doc_verified[0]->english_score >= 10 ) --}}
                                                                     @php
                                                                     $studentCourseMaster = getData('student_course_master',['course_expired_on','exam_attempt_remain','exam_remark'],['user_id' => Auth::user()->id, 'course_id'=> $course->id,'is_deleted'=>'No'], "", 'created_at');
                                                                     @endphp
@@ -1588,11 +1619,11 @@
                                                                         @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                                             <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                                         @else
-                                                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
+                                                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
                                                                         @endif
                                                                         @endif
                                                                         <form class="checkoutform">
-                                                                        @csrf
+                                                                        @csrf <!-- CSRF protection -->
                                                                         @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                         <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                         <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1603,6 +1634,9 @@
                                                                         </form>
                                                                     </div>
                                                                     @endif
+                                                                    {{-- @else
+                                                                        <a href="#" class="text-inherit learningVerified playBtnStyle"><i class="fe fe-play btn-outline-primary"></i>Play</a>
+                                                                    @endif --}}
                                                                 @else
                                                                     <div class="d-flex">
                                                                         @if(isset($course->category_id) && !empty($course->category_id) && $course->category_id != 5)
@@ -1613,11 +1647,11 @@
                                                                         @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                                         <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                                         @else
-                                                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
+                                                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
                                                                         @endif
                                                                         @endif
                                                                         <form class="checkoutform">
-                                                                        @csrf
+                                                                        @csrf <!-- CSRF protection -->
                                                                         @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                                         <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                                         <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1632,10 +1666,10 @@
                                                         @else
                                                         <div class="d-flex">
                                                             @if(isset($course->category_id) && !empty($course->category_id) && $course->category_id != 5)
-                                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                             @endif
                                                             <form class="checkoutform">
-                                                            @csrf
+                                                            @csrf <!-- CSRF protection -->
                                                             @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                             <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                             <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1682,12 +1716,34 @@
                                                 <img src="{{ Storage::url($course->course_thumbnail_file) }}" alt="course"
                                                         class="card-img-top img-fluid" max-height='10px' style="object-fit: cover;" loading="lazy"></a>
                                             @endif
+                                            <!-- Card Body -->
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
+                                                    {{-- @if (isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 1)
+                                                    <span class="badge bg-info-soft co-category">{{ __('static.Award') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 2)
+                                                    <span class="badge bg-info-soft co-category">{{ __('static.Certificate') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 3)
+                                                    <span class="badge bg-info-soft co-category">{{ __('static.Diploma') }}</span>
+                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
+                                                    $course->category_id === 4)
+                                                    <span class="badge bg-info-soft co-category">{{ __('static.Masters') }}</span>
+                                                    @endif --}}
                                                     <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ?
+                                                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
                                                         $course->ects : ''}} {{__('static.ECTS')}}</span> @endif
                                                 </div>
+                                                {{-- <h4 class="mb-2 text-truncate-line-2 course-title"><a
+                                                            @if($course->category_id == '1')
+                                                                href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"
+                                                            @else
+                                                                href="{{route('get-master-course-details',['course_id'=>base64_encode($course->id)])}}"
+                                                            @endif
+                                                        class="text-inherit">{{isset($course->course_title) ? htmlspecialchars_decode($course->course_title) : ''}}</a>
+                                                </h4> --}}
                                                 <h4 class="mb-2 text-truncate-line-2 course-title"><a
                                                     @if($course->category_id == '1')
                                                         href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"
@@ -1697,6 +1753,7 @@
                                                 class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
                                         </h4>
                                             </div>
+                                            <!-- Card Footer -->
                                             <div class="card-footer">
                                                 <div class="row align-items-center g-0"  style="VISIBILITY: HIDDEN;">
                                                     <div class="col course-price-flex">
@@ -1707,7 +1764,7 @@
                                                     </div>
 
                                                     <div class="col-auto">
-                                                        <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                                        <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                         <a class="buy-now">{{ __('static.buynow') }}</a>
                                                     </div>
                                                 </div>
@@ -1724,7 +1781,10 @@
                                 @endif
                             </div>
                         </div>
-                    </div> --}}
+                        {{-- <div class="mt-6">
+                            <a href="#" class="btn btn-outline-primary" onclick="return false;">Browse all</a>
+                        </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -1733,10 +1793,12 @@
 
 
 <!-- Most Popular Certificates -->
-<section class="course-category-tabs-main mt-5 mt-lg-0 d-none">
+<section class="course-category-tabs-main mt-5 mt-lg-0">
+    <!-- row -->
     <div class="container mb-lg-8">
         <div class="row">
-            {{-- <div class="col-12">
+            <!-- col -->
+            <div class="col-12">
                 <div class="mb-4">
                     <h1 class="mb-1 h1 fw-bold sectionheading">{{ __('static.mostpcourse') }}</h1>
                     <p>
@@ -1744,17 +1806,20 @@
 
                     </p>
                 </div>
-            </div> --}}
+            </div>
         </div>
         <div class="row">
-            {{-- @php
-            $coursesExplore = course_data_enrolled('',$course->id);
-            @endphp --}}
-            {{-- @if (isset($coursesExplore))
-            @foreach ($coursesExplore as $course)
-            @if($course->status != '2') --}}
+            @php
+           $coursesExplore = course_data_enrolled('',$course->id);
 
-            {{-- <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3 mt-3">
+            @endphp
+            @if (isset($coursesExplore))
+            @foreach ($coursesExplore as $course)
+            @if($course->status != '2')
+
+            <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3 mt-3">
+                <!-- Card -->
+
                 @if($course->status == '3')
                     <div class="card card-hover">
                         @if (isset($course->category_id) && !empty($course->category_id) && $course->category_id === 1)
@@ -1767,10 +1832,11 @@
                         <a href="{{$LINK}}"><img
                                 src="{{ Storage::url($course->course_thumbnail_file) }}"
                                 alt="course" class="card-img-top" loading="lazy"></a>
+                        <!-- Card Body -->
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ? $course->ects : ''}}
+                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}}
                                     {{ __('static.ECTS') }}</span>@endif
                             </div>
                             <h4 class="mb-2 text-truncate-line-2 course-title"><a
@@ -1780,12 +1846,13 @@
                             <div class="d-flex justify-content-between mt-1">
                                 @php $promoCode = getCoursePromoCode($course->id);@endphp
                                 @if($promoCode)
-                                    <small class="promo-code text-primary rounded p-1" style="background: #a30a1b;height:fit-content">
+                                    <small class="promo-code text-primary rounded p-1" style="background: #dae138;height:fit-content">
                                     <span class="badge badge-success text-primary" style="padding: 2px 4px"><span style="user-select: none">{{ __('static.promo') }}:</span> <span class="fw-bolder">{{$promoCode}}</span></span>
                                     </small>
                                 @endif
                             </div>
                         </div>
+                        <!-- Card Footer -->
                         <div class="card-footer" style="min-height: 65px">
                             <div class="row align-items-center g-0">
                                 <div class="col course-price-flex">
@@ -1831,7 +1898,7 @@
                                                     @else
                                                         <div class="d-flex">
                                                             <form class="checkoutform">
-                                                            @csrf
+                                                            @csrf <!-- CSRF protection -->
                                                             @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                             <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                             <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1863,7 +1930,7 @@
                                                     @else
                                                         <div class="d-flex">
                                                             <form class="checkoutform">
-                                                            @csrf
+                                                            @csrf <!-- CSRF protection -->
                                                             @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                             <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                             <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1900,10 +1967,10 @@
                                                     @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                     <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                     @else
-                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
+                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
                                                     @endif
                                                     <form class="checkoutform">
-                                                    @csrf
+                                                    @csrf <!-- CSRF protection -->
                                                     @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                     <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                     <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1922,11 +1989,11 @@
                                                     @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                                     <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                                     @else
-                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
+                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
                                                     @endif
 
                                                     <form class="checkoutform">
-                                                    @csrf
+                                                    @csrf <!-- CSRF protection -->
                                                     @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                     <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                     <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1940,10 +2007,10 @@
                                         @endif
                                     @else
                                         <div class="d-flex">
-                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart" loading="lazy"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
+                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart" loading="lazy"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
 
                                             <form class="checkoutform">
-                                                @csrf
+                                                @csrf <!-- CSRF protection -->
                                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
                                                 <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
                                                 <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
@@ -1986,7 +2053,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs new-badge-color">{{isset($course->ects) ?
+                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
                                     $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
                             </div>
                             <h4 class="mb-2 text-truncate-line-2 course-title"><a
@@ -2006,7 +2073,7 @@
                                 </div>
 
                                 <div class="col-auto">
-                                    <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                    <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                     <a class="buy-now">{{ __('static.buynow') }}</a>
                                 </div>
                             </div>
@@ -2017,10 +2084,10 @@
                         </div>
                     </div>
                 @endif
-            </div> --}}
-            {{-- @endif
+            </div>
+            @endif
             @endforeach
-            @endif --}}
+            @endif
         </div>
 
         {{-- <div class="mt-6">
@@ -2034,7 +2101,7 @@
 
 
 <!-- 4 Course Category top section  -->
-<section class="bg-light mb-4 course-categories-section-top">
+<section class="bg-light mb-4 course-categories-section-top ">
     <!-- container -->
 
     <div class="container">
@@ -2044,85 +2111,37 @@
             <div class="col-xl-12 col-md-12 col-12">
                 <div class="row">
                     <div class="col-md-12 mb-4 mt-3 mt-lg-0">
+                        <!-- heading -->
                         <h1 class="h1 fw-bold sectionheading">{{ __('static.coursecategories') }}</h1>
+                        <!-- text -->
+
                         <p class="mb-0 fs-4">{{ __('static.ccsubheading') }}</p>
                     </div>
                 </div>
                 <div class="row gy-4">
-                    @if(count($ExtendDiploma) > 0)
+                    @if(count($atheLevel3) > 0)
                     <div class="col-lg-3 col-md-6">
-                        <div class="card border-top border-4 card-hover-with-icon course_category_card">
-                            <a href="{{route('extended-diploma-courses')}}">
-                                <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
-                                    <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-6.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <h4 class="mb-0">{{ __('footer.line_27') }}</h4>
-                                         
-                                            <p class="mb-0">{{ count($ExtendDiploma) }} {{ __('static.course') }}</p>
-
-                                        </div>
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                        </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    @if(count($AtheDiploma) > 0)
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card border-top border-4 card-hover-with-icon course_category_card">
-                            <a href="{{route('athe-diploma-course')}}">
-                                <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
-                                    <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-6.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <h4 class="mb-0">{{ __('footer.line_28') }}</h4>
-                                         
-                                            <p class="mb-0">{{ count($AtheDiploma) }} {{ __('static.course') }}</p>
-
-                                        </div>
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                        </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    {{-- @if(count($atheLevel3) > 0) --}}
-                    {{-- <div class="col-lg-3 col-md-6">
+                        {{-- End Level 5 --}}
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('level-3-course')}}">
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
+                                    <!-- icon  -->
+
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-6.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/course_category_6.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
+
                                             <h4 class="mb-0">{{ __('footer.line_24') }}</h4>
                                          
                                             <p class="mb-0">{{ count($atheLevel3) }} {{ __('static.course') }}</p>
 
                                         </div>
+                                        <!-- arrow -->
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -2134,26 +2153,31 @@
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
-                    {{-- @endif --}}
-                    {{-- @if(count($atheLevel4) > 0)
+                    </div>
+                    @endif
+                    @if(count($atheLevel4) > 0)
                     <div class="col-lg-3 col-md-6">
+                        {{-- End Level 5 --}}
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('level-4-course')}}">
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
+                                    <!-- icon  -->
 
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-6.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/course_category_6.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
 
                                             <h4 class="mb-0">{{ __('footer.line_25') }}</h4>
                                          
                                             <p class="mb-0">{{ count($atheLevel4) }} {{ __('static.course') }}</p>
 
                                         </div>
+                                        <!-- arrow -->
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -2166,25 +2190,30 @@
                             </a>
                         </div>
                     </div>
-                    @endif --}}
-                    {{-- @if(count($atheLevel5) > 0)
+                    @endif
+                    @if(count($atheLevel5) > 0)
                     <div class="col-lg-3 col-md-6">
+                        {{-- End Level 5 --}}
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('level-5-course')}}">
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
+                                    <!-- icon  -->
 
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-6.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/course_category_6.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
 
                                             <h4 class="mb-0">{{ __('footer.line_26') }}</h4>
                                          
                                             <p class="mb-0">{{ count($atheLevel5) }} {{ __('static.course') }}</p>
 
                                         </div>
+                                        <!-- arrow -->
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -2197,18 +2226,25 @@
                             </a>
                         </div>
                     </div>
-                    @endif --}}
-                    {{-- <div class="col-lg-3 col-md-6">
+                    @endif
+                    <div class="col-lg-3 col-md-6">
+                        {{-- End Level 5 --}}
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('award-courses')}}">
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
+                                    <!-- icon  -->
+
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-1.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/course-category-icon-01.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
+
                                             <h4 class="mb-0">{{ __('static.Award') }}</h4>
+                                            <!-- text -->
                                             @php $count=0; @endphp
                                             @foreach ($award as $key => $course)
                                             @if($course->status != 2)
@@ -2218,6 +2254,7 @@
                                             <p class="mb-0">{{($count)}} {{ __('static.course') }}</p>
 
                                         </div>
+                                        <!-- arrow -->
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -2229,22 +2266,30 @@
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
-                    {{-- <div class="col-lg-3 col-md-6">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- card -->
+
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('post-graduate-certificates')}}">
+
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : (app()->getLocale() == 'ar' ? 'arabic_card_style' : '') }}">
+                                    <!-- icon -->
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-2.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/course-category-icon-02.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
 
                                             <h4 class="mb-0">{{ __('static.certificate_name') }}</h4>
+                                            <!-- text -->
 
                                             <p class="mb-0">{{count($certificate)}} {{ __('static.course') }}</p>
                                         </div>
+                                        <!-- icon -->
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -2256,20 +2301,25 @@
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
-                    {{-- <div class="col-lg-3 col-md-6">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- card -->
+
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('diploma-courses')}}" >
 
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : (app()->getLocale() == 'ar' ? 'arabic_card_style' : '') }}">
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-3.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/course-category-icon-03.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
 
                                             <h4 class="mb-0">{{ __('static.Diploma') }} </h4>
+                                            <!-- text -->
 
                                             <p class="mb-0">{{count($diploma)}} {{ __('static.course') }}</p>
                                         </div>
@@ -2283,22 +2333,31 @@
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
-                    {{-- <div class="col-lg-3 col-md-6">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- card -->
 
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('masters-courses')}}">
 
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : (app()->getLocale() == 'ar' ? 'arabic_card_style' : '') }}">
+                                    <!-- icon -->
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-4.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons_4">
+                                        <img src="{{ asset('frontend/images/icon/course-category-icon-04.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
+
                                             <h4 class="mb-0">{{ __('static.Masters') }}</h4>
+                                            <!-- text -->
+
                                             <p class="mb-0">{{count($masters)}} {{ __('static.course') }}</p>
                                         </div>
+                                        <!-- icon -->
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -2309,24 +2368,31 @@
                                 </div>
                             </a>
                         </div>
-                    </div>  --}}
-                    {{-- <div class="col-lg-3 col-md-6">
+                    </div> 
+                    <div class="col-lg-3 col-md-6">
+                        <!-- card -->
 
                         <div class="card border-top border-4 card-hover-with-icon">
+                            <!-- card body -->
                             <a href="{{route('dba-courses')}}">
                                 <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : (app()->getLocale() == 'ar' ? 'arabic_card_style' : '') }}">
+                                    <!-- icon  -->
 
                                     <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-5.svg') }}"
-                                            alt="" loading="lazy" class="course_category_icons">
+                                        <img src="{{ asset('frontend/images/icon/data-managemnet1.png') }}"
+                                            alt="" loading="lazy">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
+                                            <!-- heading -->
 
                                             <h4 class="mb-0">{{ __('static.DBA') }}</h4>
+                                            <!-- text -->
                                             <p class="mb-0">1 {{ __('static.course') }}</p>
 
                                         </div>
+                                        <!-- arrow -->
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -2337,7 +2403,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
+                    </div>
 
 
 
@@ -2350,15 +2416,7 @@
         </div>
     </div>
 </section>
-@php
-    //   $master =
-    //     getData('course_master',['temp_count','course_title','id','selling_price','ects','course_thumbnail_file','course_old_price','course_final_price','scholarship','status','category_id','published_on'],[[DB::raw('award_dba',NULL)],['category_id', 'IN', [9,10]],['status','!=','2']],'','published_on','desc');
 
-    $master = DB::table('course_master')->select('temp_count','course_title','id','selling_price','ects','course_thumbnail_file','course_old_price','course_final_price','scholarship','status','category_id')->where('status','!=','2')->orderBy('category_id','desc')->orderBy('published_on','desc')
-    ->whereIn('category_id',[9,10])->get();
-    $order = 'desc';
-    $customCategoryOrder = [9, 10];
-@endphp
 <!-- Trending Now -->
 <section class="bg-white">
     <div class="container">
@@ -2378,17 +2436,17 @@
                                 @else
                                     @php $LINK = route('get-master-course-details',['course_id'=>base64_encode($course->id)]) ;@endphp
                                 @endif
-                                {{-- @if($course->status == 3 ) --}}
+                                @if($course->status == 3 )
                                     <a href="{{$LINK}}"
                                     class="btn btn-light btn-xs mb-2 bg-blue-light color-blue text-start">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
-                                {{-- @else
+                                @else
                                     @if($course->category_id == '1')
                                             <a href="{{$LINK}}"
                                         class="btn btn-light btn-xs mb-2 bg-blue-light color-blue text-start">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
                                     @else
                                         <a href="{{$LINK}}" class="btn btn-light btn-xs mb-2 bg-blue-light color-blue text-start">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
                                     @endif
-                                @endif --}}
+                                @endif
                             @endif
                         @endif
                         @if($course->category_id == '5' && $course->status == 3)
@@ -2421,7 +2479,7 @@
                         <a href="#" onclick="return false;"
                             class="btn btn-light btn-xs mb-2 bg-blue-light color-blue text-start">Human Resource
                             Management</a> --}}
-                    {{-- </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -2439,17 +2497,17 @@
                         <div class=" ps-lg-8 col-xl-7 col-md-7 col-12">
                             <div>
                                 <h2 class="h1 text-white mb-3 fw-bold color-green">{{ __('static.beginyour_ljn') }}</h2>
-                                <p class=" fs-4 mb-2 mb-md-2" style="color: #e2e2e2;">{{ __('static.ljnsubheading') }}</p>
-                                    {{-- @if (!Auth::check())
+                                <p class="text-white-50 fs-4 mb-2 mb-md-2">{{ __('static.ljnsubheading') }}</p>
+                                    @if (!Auth::check())
                                         <a href="{{route('login')}}"><button class="btn btn-dark btn-main-3 ">{{ __('static.ljnbtn') }}</button></a>
                                     @elseif (Auth::check() && Auth::user()->role == 'user')
                                         <a href="{{route('student-my-learning')}}"><button class="btn btn-dark btn-main-3 ">{{ __('static.ljnbtn') }}</button></a>
-                                    @endif --}}
+                                    @endif
                             </div>
                         </div>
                         <div class="col-xl-5 col-md-5 col-12">
                             <div class="text-center d-none d-md-block">
-                                <img src="{{ asset('frontend/images/student-seating.webp') }}" alt="learning"
+                                <img src="{{ asset('frontend/images/student-seating-01.png') }}" alt="learning"
                                     class="img-fluid" loading="lazy">
                             </div>
                         </div>
@@ -2468,20 +2526,20 @@
         <div class="row">
             <div class="col-xl-12 col-md-12 col-12">
                 <div class=" mb-lg-5 mb-4">
-                    <h1 class="h1 fw-bold sectionheading text-center">
+                    <h1 class="h1 fw-bold sectionheading">
                         {{ __('static.masterskills') }}
 
                     </h1>
-                    <p class="lead mb-0 fs-4 text-center"> {{ __('static.masterskills_subheading') }}
+                    <p class="lead mb-0 fs-4"> {{ __('static.masterskills_subheading') }}
                     </p>
                 </div>
             </div>
         </div>
         <div class="row align-items-center">
-            {{-- <div class="col-xl-5 col-lg-6 col-md-12 col-12">
+            <div class="col-xl-5 col-lg-6 col-md-12 col-12">
                 <div class="mb-6 mb-lg-0">
                     <div class="mb-2">
-                        <img src="{{ asset('frontend/images/certificate/certificate-sample.webp') }}"
+                        <img src="{{ asset('frontend/images/certificate/certificate-sample-01.png') }}"
                             alt="certificate" class="img-fluid w-100" loading="lazy">
                     </div>
                     <div class="d-flex">
@@ -2495,12 +2553,12 @@
                         <span class="ms-2">{{ __('static.afterimagetext') }}</span>
                     </div>
                 </div>
-            </div> --}}
-            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                <div class="row gx-0 master_row_certificate">
-                    <div class="col-md-12 col-lg-6 masterCertificate" >
+            </div>
+            <div class="col-xl-6 offset-xl-1 col-lg-6 col-md-12 col-12">
+                <div class="row ">
+                    <div class="col-md-12 col-lg-6">
                         <div class="mb-4 mb-xl-6">
-                            <div class="mb-2 text-center">
+                            <div class="mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--gk-primary)"
                                     class="bi bi-trophy" viewBox="0 0 16 16">
                                     <path
@@ -2508,14 +2566,14 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-center">{{ __('static.masterskills_section1title') }}</h4>
-                                <p class="text-center">{{ __('static.masterskills_section1desc') }}</p>
+                                <h4>{{ __('static.masterskills_section1title') }}</h4>
+                                <p>{{ __('static.masterskills_section1desc') }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6 masterCertificate" >
+                    <div class="col-md-12 col-lg-6">
                         <div class="mb-lg-6 mb-4">
-                            <div class="mb-2 text-center">
+                            <div class="mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--gk-primary)"
                                     class="bi bi-star" viewBox="0 0 16 16">
                                     <path
@@ -2523,14 +2581,14 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-center">{{ __('static.masterskills_section2title') }}</h4>
-                                <p class="text-center">{{ __('static.masterskills_section2desc') }}</p>
+                                <h4>{{ __('static.masterskills_section2title') }}</h4>
+                                <p>{{ __('static.masterskills_section2desc') }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6 masterCertificate" >
+                    <div class="col-md-12 col-lg-6">
                         <div class="mb-4 mb-md-0">
-                            <div class="mb-2 text-center">
+                            <div class="mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--gk-primary)"
                                     class="bi bi-shield-lock" viewBox="0 0 16 16">
                                     <path
@@ -2540,14 +2598,14 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-center">{{ __('static.masterskills_section3title') }}</h4>
-                                <p class="text-center">{{ __('static.masterskills_section3desc') }}</p>
+                                <h4>{{ __('static.masterskills_section3title') }}</h4>
+                                <p>{{ __('static.masterskills_section3desc') }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6 masterCertificate">
+                    <div class="col-md-12 col-lg-6">
                         <div>
-                            <div class="mb-2 text-center">
+                            <div class="mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--gk-primary)"
                                     class="bi bi-nut" viewBox="0 0 16 16">
                                     <path
@@ -2557,8 +2615,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="mb-2 text-center">{{ __('static.masterskills_section4title') }}</h4>
-                                <p class="mb-4 text-center">{{ __('static.masterskills_section4desc') }}</p>
+                                <h4>{{ __('static.masterskills_section4title') }}</h4>
+                                <p>{{ __('static.masterskills_section4desc') }}</p>
                             </div>
                         </div>
                     </div>
@@ -2576,7 +2634,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-8 col-lg-8 col-md-12 col-12 text-lg-start">
                         <!-- caption -->
-                        <span class="mb-3 d-block text-uppercase fw-semibold ls-xl">{{ __('static.premier_learning.head') }}</span>
+                        <span class="text-primary mb-3 d-block text-uppercase fw-semibold ls-xl">{{ __('static.premier_learning.head') }}</span>
                         <h2 class="mb-2 display-5 fw-bold mb-3">
                             {{ __('static.premier_learning.mainhead') }}
                         </h2>
@@ -2671,7 +2729,7 @@
                     </div>
                     <!-- Img -->
                     <div class="col-xl-4 col-lg-4 col-12 mb-2 mb-lg-0">
-                        <img src="{{ asset('frontend/images/course-platform-01.webp') }}" alt="instructor"
+                        <img src="{{ asset('frontend/images/course-platform-01.png') }}" alt="instructor"
                             class="img-fluid" loading="lazy">
                     </div>
                 </div>
@@ -2694,7 +2752,7 @@
                             <div class=" col-xl-12 col-md-12 col-12">
                                 <div>
                                     <h2 class=" text-white mb-4 fw-bold color-green mt-3">{{ __('static.beforefooter.2section') }}</h2>
-                                    {{-- @if (Auth::check())
+                                    @if (Auth::check())
                                     @if(Auth::user()->role =='instructor')
                                         <a><button class="btn  btn-main-3 " style="white-space: nowrap">{{ __('static.ljnbtn') }}</button></a>
                                     @elseif(Auth::user()->role == 'user')
@@ -2702,7 +2760,7 @@
                                     @endif
                                     @else
                                         <a href="{{route('user.signup')}}"><button class="btn  btn-main-3" style="white-space: nowrap">{{ __('static.ljnbtn') }}</button></a>
-                                    @endif --}}
+                                    @endif
                                 </div>
                             </div>
                             <!--<div class="col-xl-4 col-md-6 col-12">-->
@@ -2723,18 +2781,18 @@
                             <div class=" col-xl-8 col-md-6 col-12">
                                 <div>
                                     <h2 class=" text-white mb-4 fw-bold color-green">{{ __('static.beforefooter.1section') }}</h2>
-                                    {{-- @if (Auth::check())
+                                    @if (Auth::check())
                                     @if(Auth::user()->role =='instructor' || Auth::user()->role == 'user')
                                         <a class="color-blue"><button class="btn  btn-main-3" style="cursor: default">{{ __('static.sliderbtn2') }}</button></a>
                                     @endif
                                     @else
                                         <a href="{{route('instructor.signup')}}" class="color-blue"><button class="btn  btn-main-3">{{ __('static.sliderbtn2') }}</button></a>
-                                    @endif --}}
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-6 col-12">
                                 <div class="text-center d-none d-md-block">
-                                    <img src="{{ asset('frontend/images/Tess-profile-pic.webp') }}" alt="learning"
+                                    <img src="{{ asset('frontend/images/tess-photo-01.png') }}" alt="learning"
                                         class="img-fluid" loading="lazy">
                                 </div>
                             </div>

@@ -21,51 +21,52 @@ $setting = App\Models\SiteSetting::find(1);
                             <li><a href="{{route('our-teachers')}}" class="nav-link d-inline-block">{!! __('footer.line_3')!!}</a></li>
                             <li><a href="{{route('contact-us')}}" class="nav-link d-inline-block">{!! __('footer.line_4')!!}</a></li>
                             <li><a href="{{route('partner-university')}}" class="nav-link d-inline-block">{!! __('footer.line_5')!!}</a></li>
+
+                            {{-- <li><a href="https://www.ustudious.com/" class="nav-link" target="_blank">E-Ascencia Business</a></li> --}}
+
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="mb-4">
+                        <!-- list -->
                         <h3 class="fw-bold mb-2">{!! __('footer.line_6')!!}</h3>
                         <ul class="list-unstyled nav nav-footer flex-column nav-x-0">
-                            {{-- @php
+                            @php
                             $atheLevel3 =
                             getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'6',['status','!=','2']],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                             @endphp
                             @if(count($atheLevel3) > 0)
-                            <li><a href="{{route('level-3-course')}}" class="nav-link d-inline-block">{!! __('footer.line_24')!!}</a></li>
+                            <!-- <li><a href="{{route('level-3-course')}}" class="nav-link d-inline-block">{!! __('footer.line_24')!!}</a></li> -->
                             @endif
+                            {{-- Level 3 end --}}
+                            {{-- Level 4 --}}
                             @php
                             $atheLevel4 =
                             getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'7',['status','!=','2']],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                             @endphp
                             @if(count($atheLevel4) > 0)
-                            <li><a href="{{route('level-4-course')}}" class="nav-link d-inline-block">{!! __('footer.line_25')!!}</a></li>
+                            <!-- <li><a href="{{route('level-4-course')}}" class="nav-link d-inline-block">{!! __('footer.line_25')!!}</a></li> -->
                             @endif
+                            {{-- Level 4 end --}}
+                            {{-- Level 5  --}}
                             @php
                             $atheLevel5 =
                             getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'8',['status','!=','2']],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
                             @endphp
                             @if(count($atheLevel5) > 0)
-                            <li><a href="{{route('level-5-course')}}" class="nav-link d-inline-block">{!! __('footer.line_26')!!}</a></li>
+                            <!-- <li><a href="{{route('level-5-course')}}" class="nav-link d-inline-block">{!! __('footer.line_26')!!}</a></li> -->
                             @endif
+                            {{-- Level 5 end --}}
                             <li><a href="{{route('award-courses')}}" class="nav-link d-inline-block">{!! __('footer.line_7')!!}</a></li>
                             <li><a href="{{route('post-graduate-certificates')}}" class="nav-link d-inline-block">{!! __('static.certificate_name')!!}</a></li>
                             <li><a href="{{route('diploma-courses')}}" class="nav-link d-inline-block">{!! __('footer.line_9')!!}</a></li>
                             <li><a href="{{route('masters-courses')}}" class="nav-link d-inline-block">{!! __('footer.line_10')!!}</a></li>
-                            <li><a href="{{route('dba-courses')}}" class="nav-link d-inline-block">{!! __('footer.line_11')!!}</a></li> --}}
-                            @php
-                            $ExtendDiploma = getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'9',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
-                            @endphp
-                            @if(count($ExtendDiploma) > 0)
-                                <li><a href="{{route('extended-diploma-courses')}}" class="nav-link d-inline-block">{!! __('footer.line_27')!!}</a></li>
-                            @endif
-                            @php
-                            $AtheDiploma = getData('course_master',['temp_count','course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status','category_id'],['category_id'=>'10',['status','!=','2']],'',DB::raw('IFNULL(published_on, "NULL")'),'asc');
-                            @endphp 
-                            @if(count($AtheDiploma) > 0)
-                                <li><a href="{{route('athe-diploma-course')}}" class="nav-link d-inline-block">{!! __('footer.line_28')!!}</a></li>
-                            @endif
+                            <li><a href="{{route('dba-courses')}}" class="nav-link d-inline-block">{!! __('footer.line_11')!!}</a></li>
+                           {{-- Level 3 --}}
+                            
+
+                            {{-- <li><a href="#" onclick="return false;" class="nav-link">Browse All</a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -101,12 +102,9 @@ $setting = App\Models\SiteSetting::find(1);
                         @endif
                         <p class="mb-0">
                             {!! __('footer.line_18')!!}
-                            <a href="mailto:info@eascencia.mt" class=" d-inline-block">{!! __('footer.line_19')!!}</a>
+                            <a href="mailto:info@eascencia.mt" class="color-blue d-inline-block">{!! __('footer.line_19')!!}</a>
                         </p>
-                        {{-- <p class="mb-1">
-                            {!! __('footer.line_20')!!}
-                            <a href="mailto:support@eascencia.mt" class=" d-inline-block">{!! __('footer.line_21')!!}</a>
-                        </p> --}}
+                     
                         {{-- <p>
                             Phone:
                             <span class="text-dark fw-semibold"><a href="tel:+91 740017795" class="text-dark">+91 7400177951</a></span>
@@ -117,12 +115,12 @@ $setting = App\Models\SiteSetting::find(1);
                             src="{{ asset('frontend/images/social/social-media-01.png') }}" alt="social logo"></a>
                     <a href="https://www.instagram.com/eascencia/" target="_blank"><img class="social-logo mb-2 "
                             src="{{ asset('frontend/images/social/social-media-02.png') }}" alt="social logo"></a>
-                    <a href="https://www.linkedin.com/company/ascencia-malta-business-school/" target="_blank"><img class="social-logo mb-2 "
+                    <!-- <a href="https://www.linkedin.com/company/ascencia-malta-business-school/" target="_blank"><img class="social-logo mb-2 "
                             src="{{ asset('frontend/images/social/social-media-03.png') }}" alt="social logo"></a>
                     <a href="https://x.com/eascenciamalta" target="_blank"><img class="social-logo mb-2 twitterLogoStyle"
                             src="{{ asset('frontend/images/social/social-media-09.png') }} " alt="social logo"></a>
                     <a href="https://www.youtube.com/@E-Ascencia" target="_blank"><img class="social-logo mb-2 twitterLogoStyle"
-                                src="{{ asset('frontend/images/social/social-media-06.png') }} " alt="social logo"></a>
+                                src="{{ asset('frontend/images/social/social-media-06.png') }} " alt="social logo"></a> -->
                     {{-- <a href="#" target="_blank" onclick="return false"><img class="social-logo mb-2 "
                             src="{{ asset('frontend/images/social/social-media-07.png') }}" alt="social logo"></a> --}}
                     {{-- <a href="https://www.quora.com/profile/E-Ascencia-Malta" target="_blank"><img class="social-logo mb-2 "
@@ -171,7 +169,7 @@ $setting = App\Models\SiteSetting::find(1);
 
                         <div class="mb-4">
 
-                            <h3 class="fw-bold mb-2">E-Paris Business Academy</h3>
+                            <h3 class="fw-bold mb-2">E-Ascencia</h3>
                             <ul class="list-unstyled nav nav-footer flex-column nav-x-0">
                                 <li><a href="{{route('about-us')}}" class="nav-link d-inline-block">About Us</a></li>
                                 <li><a href="{{route('our-teachers')}}" class="nav-link d-inline-block">Our Teachers</a></li>
@@ -228,11 +226,7 @@ $setting = App\Models\SiteSetting::find(1);
                                 Contact:
                                 <a href="mailto:info@eascencia.mt" class="color-blue d-inline-block">info@eascencia.mt</a>
                             </p>
-                            <p class="mb-1">
-                                Support:
-                                <a href="mailto:support@eascencia.mt" class="color-blue d-inline-block">support@eascencia.mt</a>
-                            </p>
-
+ 
                         </div>
                         <div class="fs-6 mt-3">
                         <a href="https://www.facebook.com/people/E-Ascencia-Malta/61559646792486/" target="_blank"><img class="social-logo mb-2 "
@@ -257,7 +251,7 @@ $setting = App\Models\SiteSetting::find(1);
                                     document.getElementById("copyright2").appendChild(document.createTextNode(new Date().getFullYear()));
                                 </script>
                             </span>
-                            E-Paris Business Academy, Inc. All Rights Reserved.
+                            E-PBA, Inc. All Rights Reserved.
                         </span>
                     </div>
 

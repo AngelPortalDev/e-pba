@@ -1,3 +1,5 @@
+
+
 <style>
     .custom-offcanvas-search {
         height: 100vh;
@@ -25,7 +27,7 @@
     }
 
     .search-input:focus {
-        border-color: #c2192c;
+        border-color: #4A90E2;
         outline: none;
         box-shadow: none;
     }
@@ -72,7 +74,7 @@
 .language-change .dropdown-menu.dropdown-menu-end li.active
    {    background-color: var(--gk-light);}
 .nav-footer .nav-link.langcode:hover,.nav-footer .nav-link.langcode.active {
-    background: #a30a1b;
+        background: #2b3990;
     color: #fff;
     border-radius: 0.375rem;
     padding: 0.5rem 1rem;
@@ -93,22 +95,23 @@
             @endif
             <!-- Mobile view nav wrap -->
             <div class="ms-auto d-flex align-items-center order-xl-3 shopping-cart-icon">
-                {{-- <div class="mobile-search-wrapper d-block d-xxl-none">
+                <div class="mobile-search-wrapper d-block d-xxl-none">
                     <i class="bi bi-search fs-3 me-3" data-bs-toggle="offcanvas" data-bs-target="#mobileSearchCanvas" aria-controls="mobileSearchCanvas"></i>
-                </div> --}}
+                </div>
 
 
                 <!-- Top Offcanvas Search -->
-                    {{-- <div class="offcanvas offcanvas-top custom-offcanvas-search h-auto headersearchOffcampus " tabindex="-1" id="mobileSearchCanvas" aria-labelledby="mobileSearchCanvasLabel">
+                    <div class="offcanvas offcanvas-top custom-offcanvas-search h-auto headersearchOffcampus " tabindex="-1" id="mobileSearchCanvas" aria-labelledby="mobileSearchCanvasLabel">
                         <div class="offcanvas-body">
                             <div class="search-bar-wrapper d-flex align-items-center">
                                 <input type="text" class="form-control search-input" id="search-input-mobile" placeholder="{{__('header.searchbox')}}" autofocus>
                                 <button type="button" class="btn-close fs-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
                             <div id="search-results-mobile" class="search-results-container mt-4 d-block d-xxl-none">
+                                <!-- Search results will appear here -->
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 <div class="d-flex align-items-center">
                     @if(Auth::check())
                         @if(Auth::user()->role === 'user')
@@ -562,7 +565,7 @@
                         <a href="{{ route('viewlogin') }}"
                             class="btn btn-outline-primary d-none shadow-sm me-2  d-lg-block text-nowrap">{{__('header.login')}}</a>
 
-                        {{-- <ul class="navbar-nav sign-btns-main">
+                        <ul class="navbar-nav sign-btns-main">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle sign-btns d-none d-lg-block customSignupStyle "
                                     href="#" id="navbarBrowse" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -573,6 +576,7 @@
                                     @if (isset($isExists) && is_numeric($isExists) && $isExists === 0)
                                         <li>
                                             <a href="{{ route('user.signup') }}" class="dropdown-item">
+                                                {{-- Student --}}
                                                 {{__('header.student')}}
                                             </a>
                                         </li>
@@ -582,6 +586,7 @@
                                     @if (isset($isExists) && is_numeric($isExists) && $isExists === 0)
                                     <li>
                                         <a href="{{ route('instructor.signup') }}" class="dropdown-item">
+                                            {{-- Teacher --}}
                                             {{__('header.teacher')}}
                                         </a>
                                     </li>
@@ -591,18 +596,19 @@
                                     @if (isset($isExists) && is_numeric($isExists) && $isExists === 0)
                                     <li>
                                         <a href="{{ route('institute.signup') }}" class="dropdown-item">
+                                            {{-- Institute --}}
                                             {{__('header.institute')}}
                                         </a>
                                     </li>
                                     @endif
                                 </ul>
                             </li>
-                        </ul> --}}
+                        </ul>
                     @endauth
                 </div>
                 <div class="dropdown language-change ms-2 d-none d-md-block">
                     <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center bg-blue-light" type="button"
-                        aria-expanded="true" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                        aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                         <i class="fe fe-globe align-middle mx-auto"></i>
                         <span class="visually-hidden bs-theme-text">Langauge</span>
                     </button>
@@ -856,7 +862,7 @@
                                 class="btn btn-outline-primary shadow-sm mt-2 mt-md-none text-nowrap">Log in</a>
                         </li>
 
-                        {{-- <li class="nav-item dropdown d-lg-none">
+                        <li class="nav-item dropdown d-lg-none">
                             <a class="nav-link dropdown-toggle sign-btns text-center mt-2 mt-md-none customSignupStyle text-nowrap"
                                 href="#" id="navbarBrowse" data-bs-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false" data-bs-display="static">Sign up</a>
@@ -871,7 +877,7 @@
                                     <a href="{{ route('institute.signup') }}" class="dropdown-item">Institute</a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
                     @endauth
 
                     @if (Auth::guest() || (Auth::check() && !in_array(Auth::user()->role, ['sub-instructor'])))
@@ -920,7 +926,7 @@
                                         </div>
                                         {{-- <div class="row"> --}}
 
-                                            {{-- <div class="col mt-4 mt-lg-0">
+                                            <div class="col mt-4 mt-lg-0">
                                                 <div class="border-bottom pb-0 mb-3 dba-title-styling">
                                                     <h5 class="mb-0">{{__('static.DBA')}}</h5>
                                                 </div>
@@ -937,7 +943,9 @@
                                                                         <a href="{{route('dba-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                             <div class="d-flex mb-3 align-items-center">
                                                                                 <div class="">
-                                                                                    <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+                                                                                    {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}</h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -946,7 +954,10 @@
                                                                     <a href="{{route('dba-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                     <div class="d-flex mb-3 align-items-center">
                                                                         <div class="">
+                                                                            {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                            </h6> --}}
                                                                         <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                         </div>
                                                                     </div>
                                                                     </a>
@@ -960,8 +971,8 @@
                                                         <a href="{{route('dba-courses')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
                                                     </div>
                                                 </div>
-                                            </div> --}}
-                                            {{-- <div class="col mt-4 mt-lg-0">
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
                                                 <div class="border-bottom pb-2 mb-3 master-title-styling">
                                                     <h5 class="mb-0">{{__('static.Masters')}}</h5>
                                                 </div>
@@ -977,8 +988,13 @@
                                                                     <div>
                                                                         <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                             <div class="d-flex mb-3 align-items-center">
+                                                                                {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                    alt="" /> --}}
                                                                                 <div class="">
-                                                                                    <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+                                                                                    {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                    </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -986,8 +1002,13 @@
                                                                 @else
                                                                     <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                     <div class="d-flex mb-3 align-items-center">
+                                                                        {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                            alt="" /> --}}
                                                                         <div class="">
-                                                                            <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+                                                                            {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                            </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                         </div>
                                                                     </div>
                                                                     </a>
@@ -1001,8 +1022,8 @@
                                                         <a href="{{route('masters-courses')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
                                                     </div>
                                                 </div>
-                                            </div> --}}
-                                            {{-- <div class="col mt-4 mt-lg-0">
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
                                                 <div class="border-bottom pb-2 mb-3 diploma-title-styling">
                                                     <h5 class="mb-0">{{__('header.Diploma')}}</h5>
                                                 </div>
@@ -1018,8 +1039,13 @@
                                                                     <div>
                                                                         <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                             <div class="d-flex mb-3 align-items-center">
+                                                                                {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                    alt="" /> --}}
                                                                                 <div class="">
-                                                                                    <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+                                                                                    {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                    </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -1027,8 +1053,13 @@
                                                                 @else
                                                                     <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                     <div class="d-flex mb-3 align-items-center">
+                                                                        {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                            alt="" /> --}}
                                                                         <div class="">
-                                                                            <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+                                                                            {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                            </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                         </div>
                                                                     </div>
                                                                     </a>
@@ -1044,8 +1075,8 @@
                                                         <a href="{{route('diploma-courses')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
                                                     </div>
                                                 </div>
-                                            </div> --}}
-                                            {{-- <div class="col mt-4 mt-lg-0">
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
                                                 <div class="border-bottom pb-2 mb-3 certificate-title-styling">
                                                     <h5 class="mb-0">{{__('header.Certificate')}}</h5>
                                                 </div>
@@ -1061,8 +1092,13 @@
                                                                 <div>
                                                                     <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                         <div class="d-flex mb-3 align-items-center">
+                                                                            {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                alt="" /> --}}
                                                                             <div class="">
-                                                                                <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+                                                                                {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                             </div>
                                                                         </div>
                                                                     </a>
@@ -1070,8 +1106,13 @@
                                                             @else
                                                                 <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                 <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
                                                                     <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                        </h6> --}}
                                                                         <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                     </div>
                                                                 </div>
                                                                 </a>
@@ -1086,8 +1127,8 @@
                                                         <a href="{{route('post-graduate-certificates')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
                                                     </div>
                                                 </div>
-                                            </div> --}}
-                                            {{-- <div class="col mt-4 mt-lg-0">
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
                                                 <div class="border-bottom pb-2 mb-3 award-title-styling">
                                                     <h5 class="mb-0">{!!__('header.Award')!!}</h5>
                                                 </div>
@@ -1119,8 +1160,12 @@
                                                         <div>
                                                             <a href="{{route('get-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                 <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
                                                                     <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}</h6> --}}
                                                                         <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                     </div>
                                                                 </div>
                                                             </a>
@@ -1129,8 +1174,12 @@
                                                             <div>
                                                                 <a href="{{route('get-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                 <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
                                                                     <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}</h6> --}}
                                                                         <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
                                                                     </div>
                                                                 </div>
                                                                 </a>
@@ -1142,7 +1191,7 @@
                                                     <a href="{{ route('award-courses') }}"
                                                         class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
                                                 </div>
-                                            </div> --}}
+                                            </div>
                                             {{-- Start level 5 --}}
                                                 @php
                                                     $atheLevel5 =
@@ -1300,7 +1349,7 @@
                                                     </div>
                                                 @endif
                                             {{-- End level 3 --}}
-                                            {{-- <div class="col mt-4 mt-lg-0">
+                                            <div class="col mt-4 mt-lg-0">
                                                 <div class="language-course-desktop">
                                                     <div class="border-bottom pb-2 mb-3 language-course-title-styling">
                                                         <h5 class="mb-0">{{__('header.courses.languagecourse')}}</h5>
@@ -1318,7 +1367,7 @@
                                                         <a href="{{route('english-course-program')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
                                                     </div>
                                                 </div>
-                                            </div> --}}
+                                            </div>
                                             {{-- <div class="col mt-4 mt-lg-0 language-course-mobile d-none d-md-block">
                                                 <div class="border-bottom pb-2 mb-3 language-course-title-styling">
                                                     <h5 class="mb-0">{{__('header.courses.languagecourse')}}</h5>
@@ -1333,104 +1382,7 @@
                                                     </a>
                                                 </div>
                                             </div> --}}
-                                                @php
-                                                $extendDiploma =
-                                                    getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'9',['status','!=','2']],'5',DB::raw('IFNULL(published_on, "NULL")'),'asc');
-                                                    $order='asc';
-                                                    $extendDiplomaSorted = $extendDiploma->sort(function ($a, $b) use ($order) {
-                                                        $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
-                                                        $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
-                                                        if ($aPublishedOn === null && $bPublishedOn === null) {
-                                                            return 0;
-                                                        }
-                                                        if ($aPublishedOn === null) {
-                                                            return 1;
-                                                        }
-                                                        if ($bPublishedOn === null) {
-                                                            return -1;
-                                                        }
-                                                        return $order === 'asc'
-                                                            ? $aPublishedOn <=> $bPublishedOn
-                                                            : $bPublishedOn <=> $aPublishedOn;
-                                                    });
-                                                    $extendDiploma = $extendDiplomaSorted->values()->all();
-                                                @endphp
-                                                @if(count($extendDiploma) > 0)
-                                                    <div class="col mt-4 mt-lg-0">
-                                                            <div class="border-bottom pb-2 mb-3 level-title-styling">
-                                                                <h5 class="mb-0">{{__('static.athe_name')}} {{__('static.extend_diploma')}} {{__('footer.line_29')}}</h5>
-                                                            </div>
-                                                            @foreach($extendDiploma as $courses)
-                                                                    <div>
-                                                                        <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
-                                                                            <div class="d-flex mb-3 align-items-center">
-                                                                                <div class="">
-                                                                                    <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
-        
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
-                                                            @endforeach
 
-                                                            <!-- Add more static course entries as needed -->
-
-                                                            <div class="mt-4">
-                                                                {{-- <a href="award-courses.html" class="btn btn-outline-primary btn-sm">More</a> --}}
-                                                                <a href="{{ route('extended-diploma-courses') }}"
-                                                                            class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
-                                                            </div>
-                                                    </div>
-                                                @endif
-                                                @php
-                                                $atheDiploma =
-                                                    getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'10',['status','!=','2']],'5',DB::raw('IFNULL(published_on, "NULL")'),'asc');
-                                                    $order='asc';
-                                                    $atheDiplomaSorted = $atheDiploma->sort(function ($a, $b) use ($order) {
-                                                        $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
-                                                        $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
-                                                        if ($aPublishedOn === null && $bPublishedOn === null) {
-                                                            return 0;
-                                                        }
-                                                        if ($aPublishedOn === null) {
-                                                            return 1;
-                                                        }
-                                                        if ($bPublishedOn === null) {
-                                                            return -1;
-                                                        }
-                                                        return $order === 'asc'
-                                                            ? $aPublishedOn <=> $bPublishedOn
-                                                            : $bPublishedOn <=> $aPublishedOn;
-                                                    });
-                                                    $atheDiploma = $atheDiplomaSorted->values()->all();
-                                                @endphp
-                                                @if(count($atheDiploma) > 0)
-                                                    <div class="col mt-4 mt-lg-0">
-                                                            <div class="border-bottom pb-2 mb-3 level-title-styling">
-                                                                <h5 class="mb-0">{{__('static.athe_diploma')}} {{__('static.diplomas')}} </h5>
-                                                            </div>
-                                                            @foreach($atheDiploma as $courses)
-                                                                    <div>
-                                                                        <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
-                                                                            <div class="d-flex mb-3 align-items-center">
-                                                                                <div class="">
-                                                                                    <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
-        
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
-                                                            @endforeach
-
-                                                            <!-- Add more static course entries as needed -->
-
-                                                            <div class="mt-4">
-                                                                {{-- <a href="award-courses.html" class="btn btn-outline-primary btn-sm">More</a> --}}
-                                                                <a href="{{ route('athe-diploma-course') }}"
-                                                                            class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
-                                                            </div>
-                                                    </div>
-                                                @endif
 
 
 
@@ -1459,7 +1411,7 @@
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle"
                                             href="#" id="navbarBrowse" data-bs-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="true" data-bs-display="static"> Languages</a>
+                                            aria-expanded="false" data-bs-display="static"> Languages</a>
                                         <ul class="dropdown-menu dropdown-menu-arrow" aria-labelledby="navbarBrowse">
                                             <li>
                                         <a href="{{ route('lang.switch', 'en') }}{{ $isStatic ? ' disableClick' : '' }}" type="button" class="dropdown-item d-flex align-items-center">
@@ -1514,7 +1466,7 @@
             {{-- **********  Large device ******* --}}
 
             {{-- start --}}
-            {{-- <div class="mobile-search-wrapper largedeviceicon">
+            <div class="mobile-search-wrapper largedeviceicon">
                 <i class="bi bi-search fs-3 me-3" data-bs-toggle="offcanvas" data-bs-target="#mobileSearchCanvasTwo" aria-controls="mobileSearchCanvasTwo"></i>
             </div>
 
@@ -1526,16 +1478,17 @@
                         <button type="button" class="btn-close  fs-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div id="search-results-large" class="search-results-container mt-4 d-none d-lg-block">
+                        <!-- Search results will appear here -->
                     </div>
                 </div>
-            </div> --}}
+            </div>
             {{-- end --}}
 
 
             {{-- ********* extra large device ********* --}}
-            {{-- <div class="me-3 headerSearch" >
+            <div class="me-3 headerSearch" >
                 <input type="text" id="search-input-xl"class="form-control search-input mb-0 d-none d-xxl-block" placeholder="{{__('header.searchbox')}}" >
                 <div id="search-results-xl" class="search-results-container search-results-containerextraLarge"></div>
-            </div> --}}
+            </div>
         </div>
     </nav>
