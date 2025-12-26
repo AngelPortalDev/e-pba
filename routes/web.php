@@ -1005,7 +1005,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles:admin']], fun
         Route::get('edit-testimonials/{id}', 'TestimonialList');
         Route::get('/testimonial-get-data/{cat}', 'TestimonialList');
         Route::post('/delete-testimonials', 'deleteTestimonials');
-
     });
 
     // Route::view('/testimonials', 'admin/testimonials/testimonials')->name('admin.testimonials.testimonials');

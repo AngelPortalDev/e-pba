@@ -1,5 +1,3 @@
-
-
 <style>
     .custom-offcanvas-search {
         height: 100vh;

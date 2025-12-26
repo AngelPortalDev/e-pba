@@ -1,5 +1,5 @@
 <?php
 
 return[
-    'test'=>'Ascencia Malta Limited, a company incorporated under',
+    'test'=>'Paris Business Academy, a company incorporated under',
 ];

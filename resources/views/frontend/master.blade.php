@@ -7,16 +7,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         {{-- <meta name="description" content="" /> --}}
-        <meta name="description" content="E-Ascencia offers a wide range of online courses in public speaking, Strategic Leadership, Entrepreneurship, Marketing and more. Enroll now to enhance your skills!" />
+        <meta name="description" content="E-PBA offers a wide range of online courses in public speaking, Strategic Leadership, Entrepreneurship, Marketing and more. Enroll now to enhance your skills!" />
         {{-- <meta name="keywords" content="" /> --}}
-        <meta name="keywords" content="online courses, E-Ascencia, Public speaking, Entrepreneurship, E-Ascencia, Professional development, Course enrollment, E-learning, Personal development, Business courses, Career growth" />
+        <meta name="keywords" content="online courses, E-PBA, Public speaking, Entrepreneurship, E-PBA, Professional development, Course enrollment, E-learning, Personal development, Business courses, Career growth" />
         <meta name="author" content="Codescandy" />
-        <meta property="og:title" content="E-Ascencia: Online Learning for Public Speaking, Leadership, and More" />
+        <meta property="og:title" content="E-PBA: Online Learning for Public Speaking, Leadership, and More" />
         <meta property="og:description" content="Enroll in our accredited online courses to enhance your skills in public speaking, leadership, and more." />
 
 
-        {{-- <title>{{ config('app.name', 'E-Ascencia: Online Learning Portal') }}</title> --}}
-        <title>E-Ascencia</title>
+        {{-- <title>{{ config('app.name', 'E-PBA: Online Learning Portal') }}</title> --}}
+        <title>E-PBA</title>
         <!-- Favicon icon-->
 
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/images/favicon/favicon.ico')}}" />
@@ -810,7 +810,7 @@ $(document).ready(function() {
       "position":"right"
   },
   "brandSetting":{
-      "brandName":"E Ascencia",
+      "brandName":"E-PBA",
       "brandSubTitle":"undefined",
       "brandImg":"https://www.eascencia.mt/frontend/images/brand/logo/logo.svg",
       "welcomeText":"Hi there!\nHow can I help you?",
