@@ -41,7 +41,7 @@ return [
 
 
 //Login student
-'loginheader'=>'Log in to E-Ascencia',
+'loginheader'=>'Log in to E-PBA',
 'forgotpassword'=>'Forgot your password?',
 'dontaccount'=>'Don’t have an account?',
 'signin'=>'Sign in',

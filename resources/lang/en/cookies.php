@@ -3,12 +3,12 @@
 return array (
 
   'line_2' => 'Cookies',
-  'line_3' => 'At E-Ascencia, we use cookies and tracking technologies to enhance your browsing experience, prevent fraud, analyze traffic, and provide personalized content. Cookies are small data files stored on your device when you visit our website. They help us remember your preferences and improve site functionality. You can manage cookies through your browser settings.',
+  'line_3' => 'At E-PBA, we use cookies and tracking technologies to enhance your browsing experience, prevent fraud, analyze traffic, and provide personalized content. Cookies are small data files stored on your device when you visit our website. They help us remember your preferences and improve site functionality. You can manage cookies through your browser settings.',
   'line_4' => 'Tracking technologies, such as web beacons and pixel tags, work alongside cookies to gather data about how you interact with our website. This information helps us understand user behaviour and optimize our services to meet your needs better.',
   'line_5' => 'Home',
   
   '1_title'=>'Third-Party Cookies',
-  'line_7' => 'Third-party cookies are set by services that are not part of E-Ascencia. These cookies are used by external providers, such as analytics companies and advertisers, to track your online activities across different websites.',
+  'line_7' => 'Third-party cookies are set by services that are not part of E-PBA. These cookies are used by external providers, such as analytics companies and advertisers, to track your online activities across different websites.',
   'line_8' => 'We partner with third-party service providers to enhance our website functionality and deliver relevant advertisements. While we strive to work with trusted partners, we encourage you to review their privacy policies to understand how they handle your data.',
  
   '2_title'=>'Cookie Preferences',
@@ -39,16 +39,16 @@ return array (
   
   '8_title' => "Privacy Policy Section",
   '8_1title'=>'Cookie Policy:',
-  'line_22' => 'At E-Ascencia, we value your privacy and are committed to ensuring the security of your personal information. We use cookies to enhance user experience, prevent fraud, and analyze traffic. You can manage cookies through your browser settings. We implement Google Analytics Advertising Features responsibly.',
+  'line_22' => 'At E-PBA, we value your privacy and are committed to ensuring the security of your personal information. We use cookies to enhance user experience, prevent fraud, and analyze traffic. You can manage cookies through your browser settings. We implement Google Analytics Advertising Features responsibly.',
   'line_23' => 'Here\'s a breakdown of how we utilize cookies and similar technologies:',
   
   '8_2title'=>'1. What Are Cookies:',
-  'line_24' => 'A cookie is a small text file that a website stores on your computer or mobile device when you visit our website or platform (www.eascencia.mt).',
+  'line_24' => 'A cookie is a small text file that a website stores on your computer or mobile device when you visit our website or platform (www.e-pba.fr/).',
   
   '8_3title'=>'2. Are there different type of cookies?',
   'line_25' => 'Yes, cookies are divided into two broad categories, being first-party cookies and third-party cookies.',
   'line_26' => 'First-party Cookies are those placed directly by us and are used only by us. We use Cookies to facilitate and improve your experience and to provide and improve our services.',
-  'line_27' => 'By accessing and using our website and platform (www.eascencia.mt), you may also receive certain third-party Cookies on your computer or device. Third-party Cookies are those placed by websites, services, and/or parties other than us. Third-party Cookies are used on the Platform for web-analytical purposes and to collect and analyse information about site performance and usage.    These Cookies are not integral to the functioning of the Platform and your use and experience of the Platform will not be impaired by refusing consent to them.',
+  'line_27' => 'By accessing and using our website and platform (www.e-pba.fr), you may also receive certain third-party Cookies on your computer or device. Third-party Cookies are those placed by websites, services, and/or parties other than us. Third-party Cookies are used on the Platform for web-analytical purposes and to collect and analyse information about site performance and usage.    These Cookies are not integral to the functioning of the Platform and your use and experience of the Platform will not be impaired by refusing consent to them.',
   'line_28' => 'Cookies are essentially categorised as follows:',
   
   'line_29' => 'Essential and Non-Essential Cookies:',

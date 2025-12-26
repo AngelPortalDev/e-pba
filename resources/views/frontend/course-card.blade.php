@@ -13,12 +13,8 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <span class="badge bg-info-soft co-category">{{ $category }}</span>
-                    @if($course->category_id == 9 || $course->category_id == 10)
-                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
-                        $course->ects : ''}} {{__('static.credits')}}</span>@endif
-                    @else
-                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
-                    @endif
+                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
+                        $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
                 </div>
                 {{-- <h4 class="mb-2 text-truncate-line-2 course-title"><a
                         href="{{route('get-master-course-details',['course_id'=>base64_encode($course->id)])}}"
@@ -74,7 +70,7 @@
                                     @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                     <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                     @else
-                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                     @endif
                                     <form class="checkoutform">
                                     @csrf <!-- CSRF protection -->
@@ -96,7 +92,7 @@
                                     @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                     <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                                     @else
-                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
+                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
                                     @endif
                                     <form class="checkoutform">
                                     @csrf <!-- CSRF protection -->
@@ -112,7 +108,7 @@
                             @endif
                         @else
                             <div class="d-flex">
-                                <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
+                                <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
 
                                 <form class="checkoutform">
                                 @csrf <!-- CSRF protection -->
@@ -159,12 +155,8 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <span class="badge bg-info-soft co-category">{{ $category}}</span>
-                    @if($course->category_id == 9 || $course->category_id == 10)
-                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
-                        $course->ects : ''}} {{__('static.credits')}}</span>@endif
-                    @else
-                        @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
-                    @endif
+                    @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}}
+                        {{__('static.ECTS')}}</span>@endif
                 </div>
                 {{-- <h4 class="mb-2 text-truncate-line-2 course-title"><a
                         href="{{route('get-master-course-details',['course_id'=>base64_encode($course->id)])}}"
@@ -186,7 +178,7 @@
                     </div>
 
                     <div class="col-auto">
-                        <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
+                        <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
                         <a class="buy-now">{{ __('static.buynow') }}</a>
                     </div>
                 </div>

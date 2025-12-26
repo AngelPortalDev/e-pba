@@ -240,8 +240,6 @@ Route::view('diploma-courses', 'frontend/diploma-courses')->name('diploma-course
 Route::view('declaration-form', 'frontend/declaration-form')->name('declaration-form');
 Route::view('masters-courses', 'frontend/masters-courses')->name('masters-courses');
 Route::view('dba-courses', 'frontend/dba-courses')->name('dba-courses');
-Route::view('extended-diploma-courses', 'frontend/extended-diploma-courses')->name('extended-diploma-courses');
-Route::view('athe-diploma-course', 'frontend/athe-diploma-course')->name('athe-diploma-course');
 // Route::view('podcast-details', 'frontend/podcast-details')->name('podcast-details');
 // Route::view('podcast-view', 'frontend/podcast-view')->name('podcast-view');
 // Route::view('quiz-view/{section_id}', 'frontend/quiz-view')->name('quiz-view');
@@ -266,8 +264,6 @@ Route::view('english-course-program', 'frontend/english-course-program')->name('
 Route::view('e-mentor-courses', 'frontend/teacher/e-mentor-courses')->name('e-mentor-courses');
 Route::view('e-mentor-students', 'frontend/teacher/e-mentor-students')->name('e-mentor-students');
 Route::view('e-mentor-purchased-students', 'frontend/teacher/e-mentor-purchased-students')->name('e-mentor-purchased-students');
-Route::view('e-mentor-expired-students', 'frontend/teacher/e-mentor-expired-students')->name('e-mentor-expired-students');
-Route::view('e-mentor-withdrawn-students', 'frontend/teacher/e-mentor-withdrawn-students')->name('e-mentor-withdrawn-students');
 
 // Route::view('e-mentor-profile', 'frontend/teacher/e-mentor-profile')->name('e-mentor-profile');
 Route::view('e-mentor-about-me', 'frontend/teacher/e-mentor-about-me')->name('e-mentor-about-me');
@@ -386,7 +382,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth', 'roles:user', 'ver
         Route::post('/student-englishvideoprogess', 'saveEnglishVideoProgress');
         Route::post('/video-progress',  'storelastwatch')->name('storevideoprogress');
         Route::get('/video-progress/{courseId}/{videoId}',  'showlastwatch')->name('getvideoprogress');
-        Route::get('/check-daily-limit/{courseId}',  'checkDailyLimit')->name('getdailylimit');
         Route::get('/student/certificate/download/{course_id}', 'downloadcertificate')->name('certificate.download');
         Route::get('student-payment-details', 'UserPaymentDetails')->name('student-payment-details');
 
@@ -488,7 +483,7 @@ Route::group(['prefix' => 'ementor', 'middleware' => ['auth', 'roles:instructor'
         Route::post('/without-question/check-submit',  'ementorCheckSubmitWithoutQuestion');
         Route::post('/eportfolio/check-submit',  'ementorEportfolioCheckSubmit');
         Route::get('get-all-students-list', 'ementorAllStudentList');
-        Route::get('get-purchased-students-list/{action?}', 'ementorPurchasedStudentList');
+        Route::get('get-purchased-students-list', 'ementorPurchasedStudentList');
         Route::get('get-all-students-list/{cat}', 'ementorAllStudentLists');
         Route::post('exam-submit', 'ementorExamSubmit')->name('ementorExamSubmit');
         Route::post('assign-sub-ementor', 'assignSubEmentor')->name('assignSubEmentor');
@@ -1010,7 +1005,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles:admin']], fun
         Route::get('edit-testimonials/{id}', 'TestimonialList');
         Route::get('/testimonial-get-data/{cat}', 'TestimonialList');
         Route::post('/delete-testimonials', 'deleteTestimonials');
-
     });
 
     // Route::view('/testimonials', 'admin/testimonials/testimonials')->name('admin.testimonials.testimonials');
@@ -1018,7 +1012,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles:admin']], fun
     // Route::patch('/profile', [UserController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [UserController::class, 'destroy'])->name('profile.destroy ');
 });
-// Route::get('admin/uploadfile', [CourseController::class, 'uploadfile']);
+Route::get('admin/uploadfile', [CourseController::class, 'uploadfile']);
 
 
 Route::post('admin/upload', [CourseController::class, 'uploadFileupload']);
@@ -1029,10 +1023,10 @@ Route::get('/youtube/callback', [AdminCourse::class, 'handleGoogleCallback'])->n
 
 Route::middleware(RedirectIfAuthenticated::class)->group(function () {
     Route::get('/login-view', [UserController::class, 'loginView'])->name('viewlogin');
-    // Route::get('student-enrollment', [UserController::class, 'userSignup'])->name('user.signup');
-    // Route::get('student-dba-enrollment', [UserController::class, 'userDbaSignup'])->name('user.dbasignup');
-    // Route::get('teacher-enrollment', [UserController::class, 'instructorSignup'])->name('instructor.signup');
-    // Route::get('institute-enrollment', [UserController::class, 'instituteSignup'])->name('institute.signup');
+    Route::get('student-enrollment', [UserController::class, 'userSignup'])->name('user.signup');
+    Route::get('student-dba-enrollment', [UserController::class, 'userDbaSignup'])->name('user.dbasignup');
+    Route::get('teacher-enrollment', [UserController::class, 'instructorSignup'])->name('instructor.signup');
+    Route::get('institute-enrollment', [UserController::class, 'instituteSignup'])->name('institute.signup');
     Route::get('/forget-password', [UserController::class, 'forgetPassword'])->name('forgot-password');
 });
 

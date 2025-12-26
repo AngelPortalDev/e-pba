@@ -3,15 +3,15 @@
 return [
     'title' => 'Privacy Policy',
     'effective_date' => 'Effective from August 2024',
-    'intro' => 'Welcome to E-Ascencia! At E-Ascencia <a href=":webiste_url">(www.eascencia.mt)</a>, we set a high priority on safeguarding your privacy. This Privacy Policy outlines how we manage your personal data, ensuring compliance with regulations such as the General Data Protection Regulation (GDPR) and The Data Protection Act (DPA) of Malta. We aim to enhance trust and transparency with our users regarding handling their data on E-Ascencia and its website <a href=":webiste_url">(www.eascencia.mt)</a>',
+    'intro' => 'Welcome to E-PBA! At E-PBA <a href=":webiste_url">(www.e-pba.fr)</a>, we set a high priority on safeguarding your privacy. This Privacy Policy outlines how we manage your personal data, ensuring compliance with regulations such as the General Data Protection Regulation (GDPR) and The Data Protection Act (DPA) of Malta. We aim to enhance trust and transparency with our users regarding handling their data on E-PBA and its website <a href=":webiste_url">(www.e-pba.fr)</a>',
 
     'breadcrumb_title' => 'Privacy Policy',
 
     'sections' => [
         'who_we_are' => [
             'title' => ' Who are we; What do we do?',
-            'content' => 'This policy has been prepared by Ascencia Malta Limited, a company incorporated under the laws of Malta and bearing company registration number C 94041 (hereinafter "Ascencia", "we", "us" or "our").',
-            'portal_description' => 'We manage and operate a portal, currently accessible online at https://www.eascencia.mt("the Portal"), through which we make available a number of online courses (each "Online Course" and collectively "Online Courses").',
+            'content' => 'This policy has been prepared by Paris Business Academy, a company incorporated under the laws of Malta and bearing company registration number C 94041 (hereinafter "Ascencia", "we", "us" or "our").',
+            'portal_description' => 'We manage and operate a portal, currently accessible online at https://www.e-pba.fr("the Portal"), through which we make available a number of online courses (each "Online Course" and collectively "Online Courses").',
             'tou_reference' => 'For further information about the Portal, the Online Courses and our respective rights and obligations, please refer to our Terms of Use ("TOU").'
         ],
 
@@ -251,8 +251,8 @@ return [
     'version' => 'Version 1',
     'date' => 'Date: August 2024',
 
-    'contact_email' => 'info@eascencia.mt',
-    'website_url' => 'https://www.eascencia.mt',
+    'contact_email' => 'info@paris-business-academy.com',
+    'website_url' => 'https://www.e-pba.fr',
     'idpc' => [
         'address' => 'Information and Data Protection Commissioner, Floor 2, Airways House, High Street, Sliema, SLM 1549, Malta',
         'phone' => '(+356) 2328 7100',

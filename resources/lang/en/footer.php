@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'line_1' => 'E-Ascencia',
+  'line_1' => 'E-PBA',
   'line_2' => 'About Us',
   'line_3' => 'Our Teachers',
   'line_4' => 'Contact Us',
@@ -21,11 +21,11 @@ return array (
   'line_16' => 'Cookies',
   'line_17' => 'Get in Touch',
   'line_18' => 'Contact:',
-  'line_19' => 'info@eascencia.mt',
+  'line_19' => 'info@paris-business-academy.com',
   'line_20' => 'Support:',
   'line_21' => 'support@eascencia.mt',
   'line_22' => '+91 7400177951',
-  'line_23' => 'E-Ascencia, Inc. All Rights Reserved.',
+  'line_23' => 'E-PBA, Inc. All Rights Reserved.',
   'line_24' => 'ATHE Level 3',
   'line_25' => 'ATHE Level 4',
   'line_26' => 'ATHE Level 5',

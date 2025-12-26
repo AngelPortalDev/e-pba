@@ -8,8 +8,8 @@ return [
     // 'version' => 'Version: 1.0',
     // 'effective_date' => 'Effective Date: August 2024',
 
-    'intro' => 'Ascencia Malta Limited, a company incorporated under the laws of Malta and bearing company registration number C 94041 (hereinafter "Ascencia", "we", "us" or "our") is an educational institution licensed by the Malta Further and Higher Education Authority (license number: 2021-018).
-    We manage and operate a portal, currently accessible online at https://www.eascencia.mt ("the Portal"), through which we make available a number of online courses (each "Online Course" and collectively "Online Courses"). These terms of use ("Terms") govern the conditions under which you may access and use the Portal, enrol in any of the Online Courses and generally access any material that we make available. We refer to our Online Courses, Course Material, and all related features or services as "Offerings". When you open an account, you agree to be bound by these Terms. Please read them carefully.',
+    'intro' => 'Paris Business Academy, a company incorporated under the laws of Malta and bearing company registration number C 94041 (hereinafter "Ascencia", "we", "us" or "our") is an educational institution licensed by the Malta Further and Higher Education Authority (license number: 2021-018).
+    We manage and operate a portal, currently accessible online at https://www.e-pba.fr ("the Portal"), through which we make available a number of online courses (each "Online Course" and collectively "Online Courses"). These terms of use ("Terms") govern the conditions under which you may access and use the Portal, enrol in any of the Online Courses and generally access any material that we make available. We refer to our Online Courses, Course Material, and all related features or services as "Offerings". When you open an account, you agree to be bound by these Terms. Please read them carefully.',
 
     'note' => 'We have tried to make these Terms fair and straightforward. If you have any questions, feel free to contact us.',
     'title' => 'Terms and Conditions',
@@ -18,8 +18,8 @@ return [
     'version' => 'Version: 1.0',
     'effective_date' => 'Effective Date: August 2024',
 
-    'intro_1' => 'Ascencia Malta Limited, a company incorporated under the laws of Malta and bearing company registration number C 94041 (hereinafter "Ascencia", "we", "us" or "our") is an educational institution licensed by the Malta Further and Higher Education Authority (license number: 2021-018).',
-    'intro_2' => 'We manage and operate a portal, currently accessible online at https://www.eascencia.mt ("the Portal"), through which we make available a number of online courses (each "Online Course" and collectively "Online Courses").',
+    'intro_1' => 'Paris Business Academy, a company incorporated under the laws of Malta and bearing company registration number C 94041 (hereinafter "Ascencia", "we", "us" or "our") is an educational institution licensed by the Malta Further and Higher Education Authority (license number: 2021-018).',
+    'intro_2' => 'We manage and operate a portal, currently accessible online at https://www.e-pba.fr ("the Portal"), through which we make available a number of online courses (each "Online Course" and collectively "Online Courses").',
     'intro_3' => 'These terms of use ("Terms") govern the conditions under which you may access and use the Portal, enrol to any of the Online Courses and generally access any material that we make available in our Portal.',
     'intro_4' => 'For ease of reference, we will use the term "Offerings" to refer to our Online Courses, any Course Material (term as defined hereunder) and generally any feature, functionality or service that we make available through our Portal.',
     'intro_5' => 'When you open an account with us, you become bound by these Terms and thus, we encourage you to take a few moments to read such Terms carefully and make sure you understand them.',
