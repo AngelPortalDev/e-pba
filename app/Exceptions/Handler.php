@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
             return redirect()->route('not-found'); // This redirects to the named route 'not-found'
         }
         if ($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException) {
-            return response()->route('/'); // Return the custom page expired view
+            return response()->route('home'); // Return the custom page expired view
         }
         if ($exception instanceof \Illuminate\Session\TokenMismatchException) {
             return response()->view('frontend.page-expired', [], 419); // Return the custom internal server error view

@@ -1,3 +1,5 @@
+
+
 <style>
     .custom-offcanvas-search {
         height: 100vh;
@@ -581,18 +583,35 @@
                                     @endif
                                     @php $where = ['teacher'=>'register','status'=>'0'];@endphp
                                     @php $isExists = is_exist('permission',$where);@endphp
-                             
+                                    @if (isset($isExists) && is_numeric($isExists) && $isExists === 0)
+                                    <li>
+                                        <a href="{{ route('instructor.signup') }}" class="dropdown-item">
+                                            {{-- Teacher --}}
+                                            {{__('header.teacher')}}
+                                        </a>
+                                    </li>
+                                    @endif
+                                    @php $where = ['institute'=>'register','status'=>'0'];@endphp
+                                    @php $isExists = is_exist('permission',$where);@endphp
+                                    @if (isset($isExists) && is_numeric($isExists) && $isExists === 0)
+                                    <li>
+                                        <a href="{{ route('institute.signup') }}" class="dropdown-item">
+                                            {{-- Institute --}}
+                                            {{__('header.institute')}}
+                                        </a>
+                                    </li>
+                                    @endif
                                 </ul>
                             </li>
                         </ul>
                     @endauth
                 </div>
                 <div class="dropdown language-change ms-2 d-none d-md-block">
-                    <!-- <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center bg-blue-light" type="button"
+                    <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center bg-blue-light" type="button"
                         aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                         <i class="fe fe-globe align-middle mx-auto"></i>
                         <span class="visually-hidden bs-theme-text">Langauge</span>
-                    </button> -->
+                    </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
                         {{-- @php
                             $staticPages = ['/','about-us', 'contact-us', 'faq', 'cookies','privacy-policy','terms-and-conditions'];
@@ -851,7 +870,12 @@
                                 <li>
                                     <a href="{{ route('user.signup') }}" class="dropdown-item">Student</a>
                                 </li>
-                              
+                                <li>
+                                    <a href="{{ route('instructor.signup') }}" class="dropdown-item">Teacher</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('institute.signup') }}" class="dropdown-item">Institute</a>
+                                </li>
                             </ul>
                         </li>
                     @endauth
@@ -859,7 +883,7 @@
                     @if (Auth::guest() || (Auth::check() && !in_array(Auth::user()->role, ['sub-instructor'])))
                         <li class="nav-item dropdown mt-3 mt-md-0">
                             {{-- <a class="nav-link dropdown-toggle" href="#" id="navbarBrowse" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-display="static">E-PBA</a>
+                                aria-haspopup="true" aria-expanded="false" data-bs-display="static">E-Ascencia</a>
                             <ul class="dropdown-menu dropdown-menu-arrow" aria-labelledby="navbarBrowse">
                                 <!-- <li class="dropdown-submenu dropend">
                                                     <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">Web Development</a>
@@ -948,8 +972,421 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                           
-                                        
+                                            <div class="col mt-4 mt-lg-0">
+                                                <div class="border-bottom pb-2 mb-3 master-title-styling">
+                                                    <h5 class="mb-0">{{__('static.Masters')}}</h5>
+                                                </div>
+                                                <div>
+                                                    @php
+                                                    $masters =
+                                                        getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'4'],'4',DB::raw('IFNULL(published_on, "NULL")'),'desc');
+                                                    @endphp
+                                                    @if(count($masters) > 0)
+                                                        @foreach($masters as $courses)
+                                                            @if($courses->status != '2')
+                                                                @if($courses->status == '3')
+                                                                    <div>
+                                                                        <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                            <div class="d-flex mb-3 align-items-center">
+                                                                                {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                    alt="" /> --}}
+                                                                                <div class="">
+                                                                                    {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                    </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                @else
+                                                                    <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                    <div class="d-flex mb-3 align-items-center">
+                                                                        {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                            alt="" /> --}}
+                                                                        <div class="">
+                                                                            {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                            </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    </a>
+                                                                @endif
+                                                            @endif
+                                                        @endforeach
+                                                    @else
+                                                        <h6>Coming Soon...</h6>
+                                                    @endif
+                                                    <div class="mt-4">
+                                                        <a href="{{route('masters-courses')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
+                                                <div class="border-bottom pb-2 mb-3 diploma-title-styling">
+                                                    <h5 class="mb-0">{{__('header.Diploma')}}</h5>
+                                                </div>
+                                                <div>
+                                                    @php
+                                                    $diploma =
+                                                        getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'3'],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                                    @endphp
+                                                    @if(count($diploma) > 0)
+                                                        @foreach($diploma as $courses)
+                                                            @if($courses->status != '2')
+                                                                @if($courses->status == '3')
+                                                                    <div>
+                                                                        <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                            <div class="d-flex mb-3 align-items-center">
+                                                                                {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                    alt="" /> --}}
+                                                                                <div class="">
+                                                                                    {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                    </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                @else
+                                                                    <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                    <div class="d-flex mb-3 align-items-center">
+                                                                        {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                            alt="" /> --}}
+                                                                        <div class="">
+                                                                            {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                            </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    </a>
+                                                                @endif
+                                                            @endif
+                                                        @endforeach
+                                                    @else
+                                                        <h6>Coming Soon...</h6>
+                                                    @endif
+                                                    
+
+                                                    <div class="mt-4">
+                                                        <a href="{{route('diploma-courses')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
+                                                <div class="border-bottom pb-2 mb-3 certificate-title-styling">
+                                                    <h5 class="mb-0">{{__('header.Certificate')}}</h5>
+                                                </div>
+                                                <div>
+                                                @php
+                                                    $certificate =
+                                                    getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'2'],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                                    @endphp
+                                                @if(count($certificate) > 0)
+                                                    @foreach($certificate as $courses)
+                                                        @if($courses->status != '2')
+                                                            @if($courses->status == '3')
+                                                                <div>
+                                                                    <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                        <div class="d-flex mb-3 align-items-center">
+                                                                            {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                alt="" /> --}}
+                                                                            <div class="">
+                                                                                {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            @else
+                                                                <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
+                                                                    <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                        </h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                    </div>
+                                                                </div>
+                                                                </a>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                @else
+                                                    <h6>Coming Soon...</h6>
+                                                @endif
+
+                                                    <div class="mt-4">
+                                                        <a href="{{route('post-graduate-certificates')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mt-4 mt-lg-0">
+                                                <div class="border-bottom pb-2 mb-3 award-title-styling">
+                                                    <h5 class="mb-0">{!!__('header.Award')!!}</h5>
+                                                </div>
+                                                @php
+                                                $award =
+                                                getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'1'],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                                $order='asc';
+                                                $awardSorted = $award->sort(function ($a, $b) use ($order) {
+                                                    $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
+                                                    $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
+                                                    if ($aPublishedOn === null && $bPublishedOn === null) {
+                                                        return 0;
+                                                    }
+                                                    if ($aPublishedOn === null) {
+                                                        return 1;
+                                                    }
+                                                    if ($bPublishedOn === null) {
+                                                        return -1;
+                                                    }
+                                                    return $order === 'asc'
+                                                        ? $aPublishedOn <=> $bPublishedOn
+                                                        : $bPublishedOn <=> $aPublishedOn;
+                                                });
+                                                $award = $awardSorted->values()->all();
+                                                @endphp
+                                                @foreach($award as $courses)
+                                                    @if($courses->status != '2')
+                                                        @if($courses->status == '3')
+                                                        <div>
+                                                            <a href="{{route('get-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
+                                                                    <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}</h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        @else
+                                                            <div>
+                                                                <a href="{{route('get-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
+                                                                    <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}</h6> --}}
+                                                                        <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                    </div>
+                                                                </div>
+                                                                </a>
+                                                            </div>
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                                <div class="mt-4">
+                                                    <a href="{{ route('award-courses') }}"
+                                                        class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                </div>
+                                            </div>
+                                            {{-- Start level 5 --}}
+                                                @php
+                                                    $atheLevel5 =
+                                                    getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'8',['status','!=','2']],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                                    $order='asc';
+                                                    $atheLevel5Sorted = $atheLevel5->sort(function ($a, $b) use ($order) {
+                                                        $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
+                                                        $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
+                                                        if ($aPublishedOn === null && $bPublishedOn === null) {
+                                                            return 0;
+                                                        }
+                                                        if ($aPublishedOn === null) {
+                                                            return 1;
+                                                        }
+                                                        if ($bPublishedOn === null) {
+                                                            return -1;
+                                                        }
+                                                        return $order === 'asc'
+                                                            ? $aPublishedOn <=> $bPublishedOn
+                                                            : $bPublishedOn <=> $aPublishedOn;
+                                                    });
+                                                    $atheLevel5 = $atheLevel5Sorted->values()->all();
+                                                @endphp
+                                                @if(count($atheLevel5) > 0)
+                                                    <div class="col mt-4 mt-lg-0">
+                                                            <div class="border-bottom pb-2 mb-3 level-title-styling">
+                                                                <h5 class="mb-0">{{__('static.athe_name')}} <br/> {{__('static.athe_level_5')}}</h5>
+                                                            </div>
+
+                                                            <!-- Example Course Entry -->
+                                                            @foreach($atheLevel5 as $courses)
+                                                                    <div>
+                                                                        <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                            <div class="d-flex mb-3 align-items-center">
+                                                                                {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                                    alt="" /> --}}
+                                                                                <div class="">
+                                                                                    {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                                    </h6> --}}
+                                                                            <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+            
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                            @endforeach
+
+                                                            <!-- Add more static course entries as needed -->
+
+                                                            <div class="mt-4">
+                                                                {{-- <a href="award-courses.html" class="btn btn-outline-primary btn-sm">More</a> --}}
+                                                                <a href="{{ route('level-5-course') }}"
+                                                                            class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                            </div>
+                                                    </div>
+                                                @endif
+                                            {{-- End level 5 --}}
+                                            {{-- Start level 4 --}}
+                                                @php
+                                                $atheLevel4 =
+                                                getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'7',['status','!=','2']],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                                $order='asc';
+                                                $atheLevel4Sorted = $atheLevel4->sort(function ($a, $b) use ($order) {
+                                                    $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
+                                                    $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
+                                                    if ($aPublishedOn === null && $bPublishedOn === null) {
+                                                        return 0;
+                                                    }
+                                                    if ($aPublishedOn === null) {
+                                                        return 1;
+                                                    }
+                                                    if ($bPublishedOn === null) {
+                                                        return -1;
+                                                    }
+                                                    return $order === 'asc'
+                                                        ? $aPublishedOn <=> $bPublishedOn
+                                                        : $bPublishedOn <=> $aPublishedOn;
+                                                });
+                                                $atheLevel4 = $atheLevel4Sorted->values()->all();
+                                                @endphp
+                                                @if(count($atheLevel4) > 0)
+                                                <div class="col mt-4 mt-lg-0">
+                                                <div class="border-bottom pb-2 mb-3 level-title-styling">
+                                                    <h5 class="mb-0">{{__('static.athe_name')}} <br/> {{__('static.athe_level_4')}}</h5>
+                                                </div>
+                                                @foreach($atheLevel4 as $courses)
+                                                        <div>
+                                                            <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                <div class="d-flex mb-3 align-items-center">
+                                                                    {{-- <img src="{{ Storage::url($courses->course_thumbnail_file) }}"
+                                                                        alt="" /> --}}
+                                                                    <div class="">
+                                                                        {{-- <h6 class="mb-0 border-bottom pb-1">{{htmlspecialchars_decode($courses->course_title)}}
+                                                                        </h6> --}}
+                                                                <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                @endforeach
+                                                <div class="mt-4">
+                                                    {{-- <a href="award-courses.html" class="btn btn-outline-primary btn-sm">More</a> --}}
+                                                    <a href="{{ route('level-4-course') }}"
+                                                                class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                </div>
+                                                </div>
+                                                @endif
+                                            {{-- End level 4 --}}
+                                            {{-- Start level 3 --}}
+                                                @php
+                                                    $atheLevel3 =
+                                                    getData('course_master',['course_title','id','selling_price','ects','course_final_price','course_old_price','course_thumbnail_file','status'],['category_id'=>'6',['status','!=','2']],'4',DB::raw('IFNULL(published_on, "NULL")'),'asc');
+                                                    $order='asc';
+                                                    $atheLevel3Sorted = $atheLevel3->sort(function ($a, $b) use ($order) {
+                                                        $aPublishedOn = isset($a->published_on) ? strtotime($a->published_on) : null;
+                                                        $bPublishedOn = isset($b->published_on) ? strtotime($b->published_on) : null;
+                                                        if ($aPublishedOn === null && $bPublishedOn === null) {
+                                                            return 0;
+                                                        }
+                                                        if ($aPublishedOn === null) {
+                                                            return 1;
+                                                        }
+                                                        if ($bPublishedOn === null) {
+                                                            return -1;
+                                                        }
+                                                        return $order === 'asc'
+                                                            ? $aPublishedOn <=> $bPublishedOn
+                                                            : $bPublishedOn <=> $aPublishedOn;
+                                                    });
+                                                    $atheLevel3 = $atheLevel3Sorted->values()->all();
+                                                @endphp
+                                                @if(count($atheLevel3) > 0)
+                                                    <div class="col mt-4 mt-lg-0">
+                                                    <div class="border-bottom pb-2 mb-3 level-title-styling">
+                                                        <h5 class="mb-0">{{__('static.athe_name')}} <br/> {{__('static.athe_level_3')}} </h5>
+                                                    </div>
+                                                    @foreach($atheLevel3 as $courses)
+                                                            <div>
+                                                                <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
+                                                                    <div class="d-flex mb-3 align-items-center">
+                                                                    <div class="">
+                                                                    <h6 class="mb-0 border-bottom pb-1">{{ htmlspecialchars_decode(getTranslatedCourseTitle($courses->id) ?? $courses->course_title) }}</h6>
+
+                                                                    </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                    @endforeach
+                                                    <div class="mt-4">
+                                                        {{-- <a href="award-courses.html" class="btn btn-outline-primary btn-sm">More</a> --}}
+                                                        <a href="{{ route('level-3-course') }}"
+                                                                    class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                    </div>
+                                                    </div>
+                                                @endif
+                                            {{-- End level 3 --}}
+                                            <div class="col mt-4 mt-lg-0">
+                                                <div class="language-course-desktop">
+                                                    <div class="border-bottom pb-2 mb-3 language-course-title-styling">
+                                                        <h5 class="mb-0">{{__('header.courses.languagecourse')}}</h5>
+                                                    </div>
+                                                    <div> 
+                                                        <a href="{{route('english-course-program')}}">
+                                                            <div class="d-flex mb-3 align-items-center">
+                                                                <div class="">
+                                                                    <h6 class="mb-0 border-bottom pb-1">{{__('header.courses.subheading')}}</h6>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                     <div class="mt-4">
+                                                        <a href="{{route('english-course-program')}}" class="btn btn-outline-primary btn-sm">{{__('header.courses.more')}}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{-- <div class="col mt-4 mt-lg-0 language-course-mobile d-none d-md-block">
+                                                <div class="border-bottom pb-2 mb-3 language-course-title-styling">
+                                                    <h5 class="mb-0">{{__('header.courses.languagecourse')}}</h5>
+                                                </div>
+                                                <div>
+                                                    <a href="{{route('english-course-program')}}">
+                                                        <div class="d-flex mb-3 align-items-center">
+                                                            <div class="">
+                                                                <h6 class="mb-0 border-bottom pb-1">{{__('header.courses.subheading')}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div> --}}
+
+
+
+
+                                        {{-- </div> --}}
 
                                     </div>
                                 </div>
