@@ -94,7 +94,7 @@
                                             @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
                                             <a class="text-inherit addtocart {{ buyNowDisabledClass() }} " id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
                                             @else
-                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
+                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
                                             @endif
 
                                             <form class="checkoutform">
@@ -182,7 +182,7 @@
                                 $course->course_old_price : 0}} </h5>@endif
                         </div>
                         <div class="col-auto">
-                            <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
+                            <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px" loading="lazy"/></a>
                             <a class="buy-now">{{ __('static.buynow') }}</a>
                         </div>
                     </div>
