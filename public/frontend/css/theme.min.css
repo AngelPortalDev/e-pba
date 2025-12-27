@@ -374,7 +374,7 @@ a:hover .text-primary-hover {
     hsla(0, 0%, 100%, 0.15),
     hsla(0, 0%, 100%, 0)
   );
-  --gk-body-font-family: "Inter", sans-serif;
+  --gk-body-font-family: "Poppins", sans-serif;
   --gk-body-font-size: 0.875rem;
   --gk-body-font-weight: 400;
   --gk-body-line-height: 1.6;
@@ -471,8 +471,8 @@ a:hover .text-primary-hover {
   --gk-dark-border-subtle: #1e293b;
   --gk-heading-color: inherit;
   /* --gk-link-color: #ac95fe; */
-  --gk-link-color: #bc0f2c;
-  --gk-link-hover-color: #bc0f2c;
+  --gk-link-color: #CE1126;
+  --gk-link-hover-color: #CE1126;
   --gk-link-color-rgb: 172, 149, 254;
   --gk-link-hover-color-rgb: 189, 170, 254;
   --gk-code-color: #e685b5;
@@ -526,7 +526,7 @@ h3,
 h5,
 h6 {
   color: var(--gk-heading-color);
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0.5rem;
@@ -534,7 +534,7 @@ h6 {
 }
 h4 {
   color: #002654;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0.5rem;
@@ -647,7 +647,7 @@ sup {
 }
 a {
   /* color: rgba(var(--gk-link-color-rgb), var(--gk-link-opacity, 1)); */
-  color: #BC0F2C;
+  color: #CE1126;
   text-decoration: none;
 }
 a:hover {
@@ -5282,7 +5282,7 @@ fieldset:disabled .btn {
   --gk-accordion-btn-icon-transition: transform 0.2s ease-in-out;
   --gk-accordion-btn-active-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232f2066' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
   --gk-accordion-btn-focus-border-color: var(--gk-input-focus-border);
-  --gk-accordion-btn-focus-box-shadow: #bc0f2c;
+  --gk-accordion-btn-focus-box-shadow: #CE1126;
   --gk-accordion-body-padding-x: 1.25rem;
   --gk-accordion-body-padding-y: 1rem;
   --gk-accordion-active-color: var(--gk-accordion-button-active-color);
@@ -6687,7 +6687,7 @@ fieldset:disabled .btn {
   --gk-tooltip-arrow-height: 0.4rem;
   word-wrap: break-word;
   display: block;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: var(--gk-tooltip-font-size);
   font-style: normal;
   font-weight: 400;
@@ -6805,7 +6805,7 @@ fieldset:disabled .btn {
   border: var(--gk-popover-border-width) solid var(--gk-popover-border-color);
   border-radius: var(--gk-popover-border-radius);
   display: block;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: var(--gk-popover-font-size);
   font-style: normal;
   font-weight: 400;
@@ -17614,7 +17614,7 @@ fieldset:disabled .btn {
   --gk-input-bg: #fff;
   --gk-input-disabled-bg: #e2e8f0;
   /* --gk-input-focus-border: #baa7ff; */
-  --gk-input-focus-border: #bc0f2c;
+  --gk-input-focus-border: #CE1126;
   --gk-input-border: #cbd5e1;
   --gk-input-placeholder-color: #CE1126;
   /* --gk-input-focus-box-shadow: 0px 0px 0px 3px rgba(231, 225, 253, 0.75); */
@@ -21169,7 +21169,7 @@ input::-webkit-outer-spin-button {
 .flatpickr-current-month span.cur-month {
   color: var(--gk-gray-600);
   display: inline-block;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 700;
   margin-left: 0.5ch;
   padding: 0;
@@ -21199,7 +21199,7 @@ input::-webkit-outer-spin-button {
   color: var(--gk-gray-600);
   cursor: text;
   display: inline-block;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: inherit;
   font-weight: 300;
   height: auto;
@@ -21229,7 +21229,7 @@ input::-webkit-outer-spin-button {
   -webkit-box-sizing: border-box;
   color: var(--gk-gray-600);
   cursor: pointer;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: inherit;
   font-weight: 300;
   height: auto;
@@ -21602,7 +21602,7 @@ span.flatpickr-weekday {
 }
 .ql-container {
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 13px;
   height: auto;
   margin: 0;
@@ -21689,7 +21689,7 @@ span.flatpickr-weekday {
   color: var(--gk-secondary);
 }
 .ql-editor .ql-font-serif {
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
 }
 .ql-editor.ql-blank:before {
   color: var(--gk-dark);
@@ -22080,7 +22080,7 @@ span.flatpickr-weekday {
   border: 1px solid var(--gk-border-color);
   border-radius: 0.5rem 0.5rem 0 0;
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   padding: 8px;
 }
 .ql-toolbar.ql-snow .ql-formats {
@@ -22634,7 +22634,7 @@ text {
   box-shadow: 0 1px 3px rgba(17, 24, 39, 0.09);
   color: #fff;
   display: none;
-  font-family: Inter, "sans-serif";
+  font-family: Poppins, "sans-serif";
   font-size: 0.765625rem;
   padding: 3px 5px;
   position: absolute;
@@ -24049,3 +24049,10 @@ a.fc-event:hover {
 .dropzone {
   background: var(--gk-white) !important;
 }
+
+:root{
+  --bs-body-font-family: 'Poppins', sans-serif;
+  --body-font-family: 'Poppins', sans-serif;
+  --heading-font-family: 'Poppins', sans-serif;
+}
+

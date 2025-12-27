@@ -128,23 +128,7 @@ $setting = App\Models\SiteSetting::find(1);
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center g-0 py-2">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <nav class="nav nav-footer justify-content-center">
-                         @php
-                           $staticPages = ['checkout'];
-                            $currentPath = request()->path();
-                            $isStatic = in_array($currentPath, $staticPages);
-                           @endphp
-                    <a class="nav-link langcode{{ app()->getLocale() == 'en' ? ' active' : '' }}{{ $isStatic ? ' disableClick' : '' }}" href="{{ route('lang.switch', 'en') }}" style="padding: 0.5rem 1rem;">English</a>
-                    <a class="nav-link langcode{{ app()->getLocale() == 'zh' ? ' active' : '' }}{{ $isStatic ? ' disableClick' : '' }} mx-2" href="{{ route('lang.switch', 'zh') }}" style="padding: 0.5rem 1rem;">中文</a>
-                    <a class="nav-link langcode{{ app()->getLocale() == 'es' ? ' active' : '' }}{{ $isStatic ? ' disableClick' : '' }}" href="{{ route('lang.switch', 'es') }}" style="padding: 0.5rem 1rem;">Español</a>
-                    <a class="nav-link langcode{{ app()->getLocale() == 'fr' ? ' active' : '' }}{{ $isStatic ? ' disableClick' : '' }} mx-2" href="{{ route('lang.switch', 'fr') }}" style="padding: 0.5rem 1rem;">Français</a>
-                    <a class="nav-link langcode{{ app()->getLocale() == 'ar' ? ' active' : '' }}{{ $isStatic ? ' disableClick' : '' }}" href="{{ route('lang.switch', 'ar') }}" style="padding: 0.5rem 1rem;">اللغة العربية</a>
-
-                    </nav>
-                </div>
-            </div>
+         
             <div class="row align-items-center g-0 border-top py-2 mt-3">
                 <!-- Desc -->
                 <div class="col-lg-12 col-md-12 col-12">
