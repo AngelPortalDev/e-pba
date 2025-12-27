@@ -2024,7 +2024,7 @@
                     <div class="mb-2">
                         <img src="{{ asset('frontend/images/certificate/certificate-sample-01.png') }}"
                             alt="certificate" class="img-fluid w-100" loading="lazy">
-                    </div>
+             git push origin dev       </div>
                     <div class="d-flex">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="var(--gk-primary)"

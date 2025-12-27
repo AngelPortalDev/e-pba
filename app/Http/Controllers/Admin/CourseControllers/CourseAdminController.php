@@ -2333,6 +2333,8 @@ class CourseAdminController extends Controller
      public function categoryupdate(Request $req)
     {
         if ($req->isMethod('POST') && $req->ajax() && Auth::check()) {
+            print_r($req);
+            die;
             $category_name =  isset($req->section_title) ? htmlspecialchars($req->input('section_title')) : '';
             $categoryid =  isset($req->category_id) ? base64_decode($req->input('category_id')) : '';
 
