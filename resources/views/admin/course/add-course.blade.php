@@ -151,6 +151,7 @@
                                                 <label class="form-label">Select Course Category <span class="text-danger">*</span> </label>
                                                 <?php $CategoryData = getData('categories',['id','category_name'],['is_deleted'=>'No'],'','created_at','asc');?>
                                                 <select class="form-select" name="category_id" id="category_id">
+                                                    
                                                     <option value="">Select</option>
                                                     @foreach ($CategoryData as $list)
                                                         @if($list->id != '1')
