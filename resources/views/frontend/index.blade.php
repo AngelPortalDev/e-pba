@@ -1397,22 +1397,7 @@
                                             <!-- Card Body -->
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
-                                                    {{-- @if (isset($course->category_id) && !empty($course->category_id) &&
-                                                    $course->category_id === 1)
-                                                       <span class="badge bg-info-soft co-category">{{ __('static.Award') }}</span>
-                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
-                                                    $course->category_id === 2)
-                                                        <span class="badge bg-info-soft co-category">{{ __('static.Certificate') }}</span>
-                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
-                                                    $course->category_id === 3)
-                                                        <span class="badge bg-info-soft co-category">{{ __('static.Diploma') }}</span>
-                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
-                                                    $course->category_id === 4)
-                                                        <span class="badge bg-info-soft co-category">{{ __('static.Masters') }}</span>
-                                                    @elseif(isset($course->category_id) && !empty($course->category_id) &&
-                                                        $course->category_id === 5)
-                                                            <span class="badge bg-info-soft co-category">{{ __('static.DBA') }}</span>
-                                                    @endif --}}
+                    
                                                     <span class="badge bg-info-soft co-category">{{getCategory($course->category_id) }}</span>
                                                     @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
                                                         $course->ects : ''}} {{__('static.ECTS')}}</span>@endif

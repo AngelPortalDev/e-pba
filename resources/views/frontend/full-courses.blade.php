@@ -112,7 +112,7 @@
                         @else
                         <div class="d-flex">
                             {{-- <a href="{{route('login')}}" class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.webp')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a> --}}
-                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-iconcopy.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
+                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
                             <form class="checkoutform">
                                 @csrf <!-- CSRF protection -->
                                 @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
