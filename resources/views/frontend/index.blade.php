@@ -123,26 +123,8 @@
         <!-- Hero Section -->
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
+           
                 <div class="carousel-item active" data-bs-interval="4000">
-                    <div class="row align-items-center g-0">
-                        <div class="col-xl-5 col-lg-6 col-md-12 ">
-                            <div class="py-7 py-lg-0">
-                                <h2 class=" display-4 slide-1-h2 bannerTitle">{{ __('static.index_side1title') }}</h2>
-                                <p class="text-white-80 mb-4 lead bannerDescription">{{ __('static.index_side1subtext') }}</p>
-
-                                @if(!Auth::check())
-                                    <a href="login-view" class="btn btn-dark btn-main-1 me-1 bannerButton">{{ __('static.sliderbtn1')}}</a>
-                                    {{-- <a href="#" class="btn btn-main-2 bannerButton">Learn More</a> --}}
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/blockchain_certificate.png') }}" alt="Student using a laptop for online learning on E-PBA's platform"
-                                class="img-fluid"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
                     <div class="row align-items-center g-0">
                         <div class="col-xl-5 col-lg-6 col-md-12 ">
                             <div class="py-7 py-lg-0">
@@ -200,7 +182,7 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/hero-img-3-main.webp') }}" alt="Accredited programs recognized by the European Qualifications Framework"
+                            <img src="{{ asset('frontend/images/hero/blockchain_certificate.png') }}" alt="Accredited programs recognized by the European Qualifications Framework"
                                 class="img-fluid"/>
                         </div>
                     </div>
@@ -1345,14 +1327,14 @@
                     <!-- All Tab Pane -->
                     <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
                         <div class="position-relative">
-                            <ul class="controls" id="sliderFifthControls">
+                            <!-- <ul class="controls" id="sliderFifthControls">
                                 <li class="prev">
                                     <i class="fe fe-chevron-left"></i>
                                 </li>
                                 <li class="next">
                                     <i class="fe fe-chevron-right"></i>
                                 </li>
-                            </ul>
+                            </ul> -->
                             <div class="sliderFifth">
                                 @php
                                 $master =
@@ -1761,312 +1743,6 @@
 </section>
 
 
-<!-- Most Popular Certificates -->
-<section class="course-category-tabs-main mt-5 mt-lg-0">
-    <!-- row -->
-    <div class="container mb-lg-8">
-        <div class="row">
-            <!-- col -->
-            <div class="col-12">
-                <div class="mb-4">
-                    <h1 class="mb-1 h1 fw-bold sectionheading">{{ __('static.mostpcourse') }}</h1>
-                    <p>
-                        {{ __('static.mostpcoursesubheading') }}
-
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @php
-           $coursesExplore = course_data_enrolled('',$course->id);
-
-            @endphp
-            @if (isset($coursesExplore))
-            @foreach ($coursesExplore as $course)
-            @if($course->status != '2')
-
-            <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3 mt-3">
-                <!-- Card -->
-
-                @if($course->status == '3')
-                    <div class="card card-hover">
-                        @if (isset($course->category_id) && !empty($course->category_id) && $course->category_id === 1)
-                            @php $LINK = route('get-course-details',['course_id'=>base64_encode($course->id)]) ;@endphp
-                        @elseif (isset($course->category_id) && !empty($course->category_id) && $course->category_id === 5)
-                            @php $LINK = route('dba-course-details',['course_id'=>base64_encode($course->id)]) ;@endphp
-                        @else
-                            @php $LINK = route('get-master-course-details',['course_id'=>base64_encode($course->id)]) ;@endphp
-                        @endif
-                        <a href="{{$LINK}}"><img
-                                src="{{ Storage::url($course->course_thumbnail_file) }}"
-                                alt="course" class="card-img-top" loading="lazy"></a>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ? $course->ects : ''}}
-                                    {{ __('static.ECTS') }}</span>@endif
-                            </div>
-                            <h4 class="mb-2 text-truncate-line-2 course-title"><a
-                                href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"
-                                class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
-                        </h4>
-                            <div class="d-flex justify-content-between mt-1">
-                                @php $promoCode = getCoursePromoCode($course->id);@endphp
-                                @if($promoCode)
-                                    <small class="promo-code text-primary rounded p-1" style="background: #dae138;height:fit-content">
-                                    <span class="badge badge-success text-primary" style="padding: 2px 4px"><span style="user-select: none">{{ __('static.promo') }}:</span> <span class="fw-bolder">{{$promoCode}}</span></span>
-                                    </small>
-                                @endif
-                            </div>
-                        </div>
-                        <!-- Card Footer -->
-                        <div class="card-footer" style="min-height: 65px">
-                            <div class="row align-items-center g-0">
-                                <div class="col course-price-flex">
-                                    @if(isset($course->category_id) && !empty($course->category_id) &&
-                                    $course->category_id === 5)
-                                        <h5 class="mb-0 course-price">€{{isset($course->course_final_price) ?
-                                        $course->course_final_price : 0}}<small>{{''.'/'}} {{ __('static.peryear') }}</small></h5>
-                                    @else
-                                        <h5 class="mb-0 course-price">€{{isset($course->course_final_price) ?
-                                        $course->course_final_price : 0}}</h5>
-                                    @endif
-                                    @if(isset($course->course_old_price) && $course->course_old_price > 0)<h5 class="old-price">€{{isset($course->course_old_price) ? $course->course_old_price :
-                                        0}} </h5>@endif
-                                </div>
-
-                                <div class="col-auto">
-                                    @if(Auth::check() && in_array(Auth::user()->role, $allowedRoles))
-                                    @elseif (Auth::check() && Auth::user()->role =='user')
-                                        @php
-                                            $isPaid = is_exist('orders', ['user_id' => Auth::user()->id,'status' => '0','course_id'=> $course->id]);
-                                        @endphp
-                                        @if(isset($course->category_id) && !empty($course->category_id) &&$course->category_id === 5)
-                                            @php
-                                                $doc_verified = getData('student_doc_verification',['english_score','identity_is_approved','edu_is_approved','identity_doc_file','edu_doc_file','resume_file','edu_trail_attempt','identity_trail_attempt','english_test_attempt','proposal_is_approved'],['student_id'=>Auth::user()->id]);
-                                            @endphp
-                                            @if(Auth::user()->apply_dba == 'Yes')
-                                                @if($doc_verified[0]->identity_is_approved == "Approved" && $doc_verified[0]->edu_is_approved == "Approved" && $doc_verified[0]->resume_file != ''  && $doc_verified[0]->english_score >= 10 && $doc_verified[0]->proposal_is_approved == 'Approved')
-                                                    @php
-                                                        $studentCourseMaster = getData('student_course_master',['course_expired_on','exam_attempt_remain','exam_remark'],['user_id' => Auth::user()->id, 'course_id'=> $course->id,'is_deleted'=>'No'], "", 'created_at');
-                                                        $playLink = "master-course-panel";
-                                                        $getExistMasterCourse = getDataArray('master_course_management', ['course_id','optional_course_id'], ['award_id' => $course->id, 'is_deleted' => 'No']);
-                                                        $DBAunderAward = '';
-                                                        if (empty($getExistMasterCourse)) {
-                                                            $DBAunderAward = 'd-none';
-                                                        }
-
-                                                    @endphp
-
-                                                    @if(isset($studentCourseMaster) && !empty($studentCourseMaster[0]) && $studentCourseMaster[0]->course_expired_on > now() &&    $studentCourseMaster[0]->exam_attempt_remain == '1' &&  $studentCourseMaster[0]->exam_remark == '0')
-                                                        <a  href="{{route($playLink,['course_id'=>base64_encode($course->id)])}}" class="mt-0 d-flex align-items-center justify-content-center playBtnStyle {!! $DBAunderAward !!}"><i class="bi bi-play-circle btn-outline-primary me-1 fs-4"></i> {{ __('static.play') }}</a>
-                                                    @elseif(isset($studentCourseMaster) && !empty($studentCourseMaster[0]) && $studentCourseMaster[0]->course_expired_on > now() &&    $studentCourseMaster[0]->exam_attempt_remain == '2')
-                                                        <a    href="{{route($playLink,['course_id'=>base64_encode($course->id)])}}" class="mt-0 d-flex align-items-center justify-content-center playBtnStyle {!! $DBAunderAward !!}"><i class="bi bi-play-circle btn-outline-primary me-1 fs-4" ></i> {{ __('static.play') }}</a>
-                                                    @else
-                                                        <div class="d-flex">
-                                                            <form class="checkoutform">
-                                                            @csrf <!-- CSRF protection -->
-                                                            @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
-                                                            <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
-                                                            <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
-                                                            <input type="hidden" class="form-control overall_old_total" name="overall_old_total" value="{{base64_encode($course->course_old_price -$course->course_final_price)}}">
-                                                            <input type='hidden' class="form-control overall_full_totals" name="overall_full_totals" value="{{base64_encode($total_full_price)}}">
-                                                            <input type='hidden' class="form-control directchekout" name="directchekout" value="{{base64_encode('0')}}">
-                                                            <button class="buy-now buyCourse">{{ __('static.buynow') }}</button>
-                                                            </form>
-                                                        </div>
-                                                    @endif
-                                                @else
-                                                    <a href="{{ route('student-document-verification') }}"><button class="buy-now {{ buyNowDisabledClass() }}">{{ __('static.buynow') }}</button></a>
-                                                @endif
-                                            @else
-                                                @if($doc_verified[0]->identity_is_approved == "Approved" && $doc_verified[0]->edu_is_approved == "Approved" && $doc_verified[0]->resume_file != ''  && $doc_verified[0]->english_score >= 10 & $doc_verified[0]->proposal_is_approved == 'Approved')
-                                                    @php
-                                                    $studentCourseMaster = getData('student_course_master',['course_expired_on','exam_attempt_remain','exam_remark'],['user_id' => Auth::user()->id, 'course_id'=> $course->id,'is_deleted'=>'No'], "", 'created_at');
-                                                    $playLink = "master-course-panel";
-                                                    $getExistMasterCourse = getDataArray('master_course_management', ['course_id','optional_course_id'], ['award_id' => $course->id, 'is_deleted' => 'No']);
-                                                        $DBAunderAward = '';
-                                                        if (empty($getExistMasterCourse)) {
-                                                            $DBAunderAward = 'd-none';
-                                                        }
-                                                    @endphp
-                                                    @if(isset($studentCourseMaster) && !empty($studentCourseMaster[0]) && $studentCourseMaster[0]->course_expired_on > now() &&    $studentCourseMaster[0]->exam_attempt_remain == '1' &&  $studentCourseMaster[0]->exam_remark == '0')
-                                                        <a  href="{{route($playLink,['course_id'=>base64_encode($course->id)])}}" class="mt-0 d-flex align-items-center justify-content-center playBtnStyle {!! $DBAunderAward !!}" ><i class="bi bi-play-circle btn-outline-primary me-1 fs-4" ></i> {{ __('static.play') }}</a>
-                                                    @elseif(isset($studentCourseMaster) && !empty($studentCourseMaster[0]) && $studentCourseMaster[0]->course_expired_on > now() &&    $studentCourseMaster[0]->exam_attempt_remain == '2')
-                                                        <a  href="{{route($playLink,['course_id'=>base64_encode($course->id)])}}" class="mt-0 d-flex align-items-center justify-content-center playBtnStyle {!! $DBAunderAward !!}" ><i class="bi bi-play-circle btn-outline-primary me-1 fs-4" ></i> {{ __('static.play') }}</a>
-                                                    @else
-                                                        <div class="d-flex">
-                                                            <form class="checkoutform">
-                                                            @csrf <!-- CSRF protection -->
-                                                            @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
-                                                            <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
-                                                            <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
-                                                            <input type="hidden" class="form-control overall_old_total" name="overall_old_total" value="{{base64_encode($course->course_old_price -$course->course_final_price)}}">
-                                                            <input type='hidden' class="form-control overall_full_totals" name="overall_full_totals" value="{{base64_encode($total_full_price)}}">
-                                                            <input type='hidden' class="form-control directchekout" name="directchekout" value="{{base64_encode('0')}}">
-                                                            <button class="buy-now buyCourse">{{ __('static.buynow') }}</button>
-                                                            </form>
-                                                        </div>
-                                                    @endif
-                                                @else
-                                                    <a href="{{ in_array(Auth::user()->email ?? '', [env('Lockeduser')]) ? 'javascript:void(0)' : route('student-document-verification') }}"><button class="buy-now">{{ __('static.buynow') }}</button></a>
-                                                @endif
-                                            @endif
-                                        @else
-                                            @if (isset($isPaid) && !empty($isPaid) && is_numeric($isPaid) &&  $isPaid > 0)
-                                                @php
-                                                    $studentCourseMaster = getData('student_course_master',['course_expired_on','exam_attempt_remain','exam_remark'],['user_id' => Auth::user()->id, 'course_id'=> $course->id,'is_deleted'=>'No'], "", 'created_at');
-                                                @endphp
-                                                @if($course->category_id == '1')
-                                                    @php $LINK = route('start-course-panel',['course_id'=>base64_encode($course->id)]); @endphp
-                                                @else
-                                                    @php $LINK = route('master-course-panel',['course_id'=>base64_encode($course->id)]); @endphp
-                                                @endif
-                                                @if(isset($studentCourseMaster) && !empty($studentCourseMaster[0]) && $studentCourseMaster[0]->course_expired_on > now() && $studentCourseMaster[0]->exam_attempt_remain == '1' &&  $studentCourseMaster[0]->exam_remark == '0')
-                                                    <a  href="{{$LINK}}" class="mt-0 d-flex align-items-center justify-content-center playBtnStyle" ><i class="bi bi-play-circle btn-outline-primary me-1 fs-4 " ></i> {{ __('static.play') }}</a>
-                                                @elseif(isset($studentCourseMaster) && !empty($studentCourseMaster[0]) && $studentCourseMaster[0]->course_expired_on > now() &&    $studentCourseMaster[0]->exam_attempt_remain == '2')
-                                                    <a  href="{{$LINK}}" class="mt-0 d-flex align-items-center justify-content-center playBtnStyle" ><i class="bi bi-play-circle btn-outline-primary me-1 fs-4" ></i> {{ __('static.play') }}</a>
-                                                @else
-                                                <div class="d-flex">
-                                                    @php
-                                                    $isCart = is_exist('cart', ['student_id' => Auth::user()->id,'course_id'=> $course->id,'status'=>'Active']);
-                                                    @endphp
-                                                    @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
-                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
-                                                    @else
-                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
-                                                    @endif
-                                                    <form class="checkoutform">
-                                                    @csrf <!-- CSRF protection -->
-                                                    @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
-                                                    <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
-                                                    <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
-                                                    <input type="hidden" class="form-control overall_old_total" name="overall_old_total" value="{{base64_encode($course->course_old_price -$course->course_final_price)}}">
-                                                    <input type='hidden' class="form-control overall_full_totals" name="overall_full_totals" value="{{base64_encode($total_full_price)}}">
-                                                    <input type='hidden' class="form-control directchekout" name="directchekout" value="{{base64_encode('0')}}">
-                                                    <button class="buy-now buyCourse {{ buyNowDisabledClass() }}">{{ __('static.buynow') }}</button>
-                                                    </form>
-                                                </div>
-                                                @endif
-                                            @else
-                                                <div class="d-flex">
-                                                    @php
-                                                    $isCart = is_exist('cart', ['student_id' => Auth::user()->id,'course_id'=> $course->id,'status'=>'Active']);
-                                                    @endphp
-                                                    @if (isset($isCart) && !empty($isCart) && is_numeric($isCart) &&  $isCart > 0)
-                                                    <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/check-out-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
-                                                    @else
-                                                        <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="added to cart" style="height: 25px; width: 25px" loading="lazy"/></i></a>
-                                                    @endif
-
-                                                    <form class="checkoutform">
-                                                    @csrf <!-- CSRF protection -->
-                                                    @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
-                                                    <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
-                                                    <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
-                                                    <input type="hidden" class="form-control overall_old_total" name="overall_old_total" value="{{base64_encode($course->course_old_price -$course->course_final_price)}}">
-                                                    <input type='hidden' class="form-control overall_full_totals" name="overall_full_totals" value="{{base64_encode($total_full_price)}}">
-                                                    <input type='hidden' class="form-control directchekout" name="directchekout" value="{{base64_encode('0')}}">
-                                                    <button class="buy-now buyCourse {{ buyNowDisabledClass() }}">{{ __('static.buynow') }}</button>
-                                                    </form>
-                                                </div>
-                                            @endif
-                                        @endif
-                                    @else
-                                        <div class="d-flex">
-                                            <a class="text-inherit addtocart {{ buyNowDisabledClass() }}" id="addtocart" data-course-id="{{base64_encode($course->id)}}"  data-cart-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('add')}}" data-withcart="withcart" loading="lazy"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" style="height: 25px; width: 25px"/></a>
-
-                                            <form class="checkoutform">
-                                                @csrf <!-- CSRF protection -->
-                                                @php $total_full_price = $course->course_old_price - ($course->course_old_price - $course->course_final_price) ; @endphp
-                                                <input type='hidden' value="{{base64_encode($course->id)}}" name="course_id" id="course_id">
-                                                <input type="hidden" class="form-control overall_total" name="overall_total" value="{{base64_encode($course->course_old_price)}}">
-                                                <input type="hidden" class="form-control overall_old_total" name="overall_old_total" value="{{base64_encode($course->course_old_price -$course->course_final_price)}}">
-                                                <input type='hidden' class="form-control overall_full_totals" name="overall_full_totals" value="{{base64_encode($total_full_price)}}">
-                                                <input type='hidden' class="form-control directchekout" name="directchekout" value="{{base64_encode('0')}}">
-                                                <button class="buy-now buyCourse {{ buyNowDisabledClass() }}">{{ __('static.buynow') }}</button>
-                                            </form>
-                                        </div>
-                                    @endif
-
-                                </div>
-                            </div>
-                            @if(Auth::check() && in_array(Auth::user()->role, $allowedRoles))
-                            @else
-                            <div class="col-auto course-saved-btn">
-                                @if (Auth::check() && Auth::user()->role =='user')
-                                @php
-                                        $isWishlist = is_exist('wishlist', ['student_id' => Auth::user()->id,'status'=>'Active','cart_wishlist' => '0','course_id'=> $course->id]);
-                                    @endphp
-                                    @if (isset($isWishlist) && !empty($isWishlist) && is_numeric($isWishlist) &&  $isWishlist > 0)
-                                        @php $showicon="bi heart-icon bi-heart-fill";@endphp
-                                    @else
-                                        @php $showicon="bi bi-heart heart-icon";@endphp
-                                    @endif
-                                    <a  class="text-inherit addwishlist {{ buyNowDisabledClass() }}" aria-label="Add to Wishlist" data-course-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('wishlist')}}"><i class="{{$showicon}}"></i></a>
-                                @else
-                                    <a  class="text-inherit addwishlist {{ buyNowDisabledClass() }}" data-course-id="{{base64_encode($course->id)}}" data-action="{{base64_encode('wishlist')}}" data-withwishlist="withwishlist"><i class="bi bi-heart heart-icon"></i></a>
-                                @endif
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                @else
-                    <div class="card card-hover">
-                        <a href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}">
-                        <img src="{{ Storage::url($course->course_thumbnail_file) }}" alt="course"
-                                class="card-img-top img-fluid" max-height='10px' style="object-fit: cover;" loading="lazy"></a>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge bg-info-soft co-category">{{getCategory($course->category_id)}}</span>
-                                @if(isset($course->ects) && !empty($course->ects))<span class="badge bg-success-soft co-etcs">{{isset($course->ects) ?
-                                    $course->ects : ''}} {{__('static.ECTS')}}</span>@endif
-                            </div>
-                            <h4 class="mb-2 text-truncate-line-2 course-title"><a
-                                    href="{{route('get-course-details',['course_id'=>base64_encode($course->id)])}}"
-                                    class="text-inherit">{{ htmlspecialchars_decode(getTranslatedCourseTitle($course->id) ?? $course->course_title) }}</a>
-                            </h4>
-
-                        </div>
-                        <!-- Card Footer -->
-                        <div class="card-footer">
-                            <div class="row align-items-center g-0"  style="VISIBILITY: HIDDEN;">
-                                <div class="col course-price-flex">
-                                    <h5 class="mb-0 course-price">€{{isset($course->course_old_price ) ?
-                                        $course->course_old_price : 0}}</h5>
-                                    @if(isset($course->course_old_price) && $course->course_old_price > 0)<h5 class="old-price">€{{isset($course->course_final_price) ?
-                                        $course->course_final_price : 0}} </h5>@endif
-                                </div>
-
-                                <div class="col-auto">
-                                    <a class="text-inherit"><img src="{{ asset('frontend/images/add-to-cart-icon.svg')}}" class="text-primary align-middle me-2" alt="add to cart" style="height: 25px; width: 25px" loading="lazy"/></a>
-                                    <a class="buy-now">{{ __('static.buynow') }}</a>
-                                </div>
-                            </div>
-
-                            <div class="col-auto course-saved-btn"   style="VISIBILITY: HIDDEN;">
-                                <a class="text-reset bookmark"><i class="bi bi-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            </div>
-            @endif
-            @endforeach
-            @endif
-        </div>
-
-        {{-- <div class="mt-6">
-            <a href="#" class="btn btn-outline-primary">Browse all</a>
-        </div> --}}
-
-    </div>
-
-
-</section>
 
 
 <!-- 4 Course Category top section  -->
@@ -2088,9 +1764,7 @@
                     </div>
                 </div>
                 <div class="row gy-4">
-                   
-                   
-                  
+                 
                     <div class="col-lg-3 col-md-6">
                         <!-- card -->
 
@@ -2321,7 +1995,7 @@
                         <div class=" ps-lg-8 col-xl-7 col-md-7 col-12">
                             <div>
                                 <h2 class="h1 text-white mb-3 fw-bold color-green">{{ __('static.beginyour_ljn') }}</h2>
-                                <p class="text-white-50 fs-4 mb-2 mb-md-2">{{ __('static.ljnsubheading') }}</p>
+                                <p style="color:black"class=" fs-4 mb-2 mb-md-2">{{ __('static.ljnsubheading') }}</p>
                                     @if (!Auth::check())
                                         <a href="{{route('login')}}"><button class="btn btn-dark btn-main-3 ">{{ __('static.ljnbtn') }}</button></a>
                                     @elseif (Auth::check() && Auth::user()->role == 'user')
@@ -2564,69 +2238,7 @@
 
 <!-- Tess and Claire section  -->
     @if(!Auth::check())
-<section class="py-8 tess-claire-section">
-    <div class="container ">
 
-            <div class="row">
-
-                <div class="col-md-6 mt-2 mt-md-0 d-flex">
-                    <div class="bg-blue p-8 rounded-4">
-                        <div class="row align-items-center">
-
-                            <div class=" col-xl-12 col-md-12 col-12">
-                                <div>
-                                    <h2 class=" text-white mb-4 fw-bold color-green mt-3">{{ __('static.beforefooter.2section') }}</h2>
-                                    @if (Auth::check())
-                                    @if(Auth::user()->role =='instructor')
-                                        <a><button class="btn  btn-main-3 " style="white-space: nowrap">{{ __('static.ljnbtn') }}</button></a>
-                                    @elseif(Auth::user()->role == 'user')
-                                        <a href="{{route('dashboard')}}"><button class="btn  btn-main-3 " style="white-space: nowrap">{{ __('static.ljnbtn') }}</button></a>
-                                    @endif
-                                    @else
-                                        <a href="{{route('user.signup')}}"><button class="btn  btn-main-3" style="white-space: nowrap">{{ __('static.ljnbtn') }}</button></a>
-                                    @endif
-                                </div>
-                            </div>
-                            <!--<div class="col-xl-4 col-md-6 col-12">-->
-                            <!--    <div class="text-center d-none d-md-block">-->
-                            <!--        <img src="{{ asset('frontend/images/claire-photo-01.png') }}" alt="learning"-->
-                            <!--            class="img-fluid" loading="lazy">-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-6 mt-2 mt-md-0 d-flex">
-                    <div class="bg-blue p-8 rounded-4">
-                        <div class="row align-items-center">
-                            @php $href = 'teacher-enrollment'; @endphp
-                            <div class=" col-xl-8 col-md-6 col-12">
-                                <div>
-                                    <h2 class=" text-white mb-4 fw-bold color-green">{{ __('static.beforefooter.1section') }}</h2>
-                                    @if (Auth::check())
-                                    @if(Auth::user()->role =='instructor' || Auth::user()->role == 'user')
-                                        <a class="color-blue"><button class="btn  btn-main-3" style="cursor: default">{{ __('static.sliderbtn2') }}</button></a>
-                                    @endif
-                                    @else
-                                        <a href="{{route('instructor.signup')}}" class="color-blue"><button class="btn  btn-main-3">{{ __('static.sliderbtn2') }}</button></a>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-12">
-                                <div class="text-center d-none d-md-block">
-                                    <img src="{{ asset('frontend/images/tess-photo-01.png') }}" alt="learning"
-                                        class="img-fluid" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-    </div>
-</section>
 {{-- <hr/> --}}
 @endif
 

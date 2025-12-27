@@ -2152,3 +2152,19 @@ body .wa-chat-box{
     height: 200px;
 }
    
+/* FIX: Bootstrap dropdown caret showing as a square */
+a.nav-link.dropdown-toggle::after{
+  content: "" !important;
+  display: inline-block !important;
+  margin-left: .355em !important;
+  vertical-align: .255em !important;
+
+
+
+  /* Remove any background icon square */
+  background: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  box-shadow: none !important;
+}
