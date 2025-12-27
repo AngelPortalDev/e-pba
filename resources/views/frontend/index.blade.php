@@ -205,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-                 <div class="carousel-item" data-bs-interval="40000">
+                 <!-- <div class="carousel-item" data-bs-interval="40000">
                     <div class="row align-items-center g-0">
                         <div class="col-xl-5 col-lg-6 col-md-12 ">
                             <div class="py-7 py-lg-0">
@@ -225,7 +225,7 @@
                                 class="img-fluid"/>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <a class="carousel-control-prev banner-carouse-prev" href="#carouselExampleInterval" role="button"
@@ -701,41 +701,10 @@
                      $athecat8Courses = collect($atheLevelData)
                      ->where('category_id', 8)->values();
                     @endphp
-                    @if($athecat6Courses->isNotEmpty())
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link " id="pills-athe-level3-tab" data-bs-toggle="pill" href="#pills-athe-level3"
-                            role="tab" aria-controls="pills-athe-level3" aria-selected="true">
-                            {{ __('footer.line_24') }}
-
-                        </a>
-                    </li>
-                    @endif
-                    @if($athecat7Courses->isNotEmpty())
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link " id="pills-athe-level4-tab" data-bs-toggle="pill" href="#pills-athe-level4"
-                            role="tab" aria-controls="pills-athe-level4" aria-selected="true">
-                            {{ __('footer.line_25') }}
-
-                        </a>
-                    </li>
-                    @endif
-                    @if($athecat8Courses->isNotEmpty())
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link " id="pills-athe-level5-tab" data-bs-toggle="pill" href="#pills-athe-level5"
-                            role="tab" aria-controls="pills-athe-level5" aria-selected="true">
-                            {{ __('footer.line_26') }}
-
-                        </a>
-                    </li>
-                    @endif
-                     <!-- nav item -->
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-award-tab" data-bs-toggle="pill" href="#pills-award"
-                            role="tab" aria-controls="pills-award" aria-selected="false">
-                            {{ __('static.Award') }}
-
-                        </a>
-                    </li>
+                  
+                 
+                    
+                 
                     <!-- nav item -->
                      <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-certificate-tab" data-bs-toggle="pill" href="#pills-certificate"
@@ -2119,154 +2088,9 @@
                     </div>
                 </div>
                 <div class="row gy-4">
-                    @if(count($atheLevel3) > 0)
-                    <div class="col-lg-3 col-md-6">
-                        {{-- End Level 5 --}}
-                        <div class="card border-top border-4 card-hover-with-icon">
-                            <!-- card body -->
-                            <a href="{{route('level-3-course')}}">
-                                <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
-                                    <!-- icon  -->
-
-                                    <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course_category_6.png') }}"
-                                            alt="" loading="lazy">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <!-- heading -->
-
-                                            <h4 class="mb-0">{{ __('footer.line_24') }}</h4>
-                                         
-                                            <p class="mb-0">{{ count($atheLevel3) }} {{ __('static.course') }}</p>
-
-                                        </div>
-                                        <!-- arrow -->
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                        </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    @if(count($atheLevel4) > 0)
-                    <div class="col-lg-3 col-md-6">
-                        {{-- End Level 5 --}}
-                        <div class="card border-top border-4 card-hover-with-icon">
-                            <!-- card body -->
-                            <a href="{{route('level-4-course')}}">
-                                <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
-                                    <!-- icon  -->
-
-                                    <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course_category_6.png') }}"
-                                            alt="" loading="lazy">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <!-- heading -->
-
-                                            <h4 class="mb-0">{{ __('footer.line_25') }}</h4>
-                                         
-                                            <p class="mb-0">{{ count($atheLevel4) }} {{ __('static.course') }}</p>
-
-                                        </div>
-                                        <!-- arrow -->
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                        </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    @if(count($atheLevel5) > 0)
-                    <div class="col-lg-3 col-md-6">
-                        {{-- End Level 5 --}}
-                        <div class="card border-top border-4 card-hover-with-icon">
-                            <!-- card body -->
-                            <a href="{{route('level-5-course')}}">
-                                <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
-                                    <!-- icon  -->
-
-                                    <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course_category_6.png') }}"
-                                            alt="" loading="lazy">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <!-- heading -->
-
-                                            <h4 class="mb-0">{{ __('footer.line_26') }}</h4>
-                                         
-                                            <p class="mb-0">{{ count($atheLevel5) }} {{ __('static.course') }}</p>
-
-                                        </div>
-                                        <!-- arrow -->
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    <div class="col-lg-3 col-md-6">
-                        {{-- End Level 5 --}}
-                        <div class="card border-top border-4 card-hover-with-icon">
-                            <!-- card body -->
-                            <a href="{{route('award-courses')}}">
-                                <div class="card-body {{ app()->getLocale() == 'es' ? 'spanish_card_style' : '' }}">
-                                    <!-- icon  -->
-
-                                    <div class="icon-shape icon-lg rounded-circle bg-light mb-3 card-icon">
-                                        <img src="{{ asset('frontend/images/icon/course-category-icon-01.png') }}"
-                                            alt="" loading="lazy">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <!-- heading -->
-
-                                            <h4 class="mb-0">{{ __('static.Award') }}</h4>
-                                            <!-- text -->
-                                            @php $count=0; @endphp
-                                            @foreach ($award as $key => $course)
-                                            @if($course->status != 2)
-                                               @php $count++; @endphp
-                                            @endif
-                                            @endforeach
-                                            <p class="mb-0">{{($count)}} {{ __('static.course') }}</p>
-
-                                        </div>
-                                        <!-- arrow -->
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                   
+                   
+                  
                     <div class="col-lg-3 col-md-6">
                         <!-- card -->
 
