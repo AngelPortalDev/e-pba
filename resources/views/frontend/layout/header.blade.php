@@ -85,13 +85,13 @@
         <div class="container px-0">
             @if(Auth::check() && Auth::user()->role === 'user')
                 <a class="navbar-brand logo-main" href="/"><img src="{{ asset('frontend/images/brand/logo/logo.svg') }}"
-                    alt="E-Ascencia" /></a>
+                    alt="E-PBA" /></a>
             @elseif(Auth::check() && Auth::user()->role === 'instructor')
                 <a class="navbar-brand logo-main"  href="/"><img src="{{ asset('frontend/images/brand/logo/logo.svg') }}"
-                alt="E-Ascencia" /></a>
+                alt="E-PBA" /></a>
             @else
                 <a class="navbar-brand logo-main" href="/"><img src="{{ asset('frontend/images/brand/logo/logo.svg') }}"
-                alt="E-Ascencia" /></a>
+                alt="E-PBA" /></a>
             @endif
             <!-- Mobile view nav wrap -->
             <div class="ms-auto d-flex align-items-center order-xl-3 shopping-cart-icon">
@@ -883,7 +883,7 @@
                     @if (Auth::guest() || (Auth::check() && !in_array(Auth::user()->role, ['sub-instructor'])))
                         <li class="nav-item dropdown mt-3 mt-md-0">
                             {{-- <a class="nav-link dropdown-toggle" href="#" id="navbarBrowse" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-display="static">E-Ascencia</a>
+                                aria-haspopup="true" aria-expanded="false" data-bs-display="static">E-PBA</a>
                             <ul class="dropdown-menu dropdown-menu-arrow" aria-labelledby="navbarBrowse">
                                 <!-- <li class="dropdown-submenu dropend">
                                                     <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">Web Development</a>
@@ -1089,6 +1089,7 @@
                                                     @foreach($certificate as $courses)
                                                         @if($courses->status != '2')
                                                             @if($courses->status == '3')
+                                                            
                                                                 <div>
                                                                     <a href="{{route('get-master-course-details',['course_id'=>base64_encode($courses->id)])}}">
                                                                         <div class="d-flex mb-3 align-items-center">
@@ -1392,9 +1393,9 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="{{route('partner-university')}}" class="dropdown-item">{{__('header.approvedpartners')}}</a>
-                        </li>
+                        </li> -->
 
                     @endif
 

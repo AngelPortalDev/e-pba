@@ -20,9 +20,9 @@ $setting = App\Models\SiteSetting::find(1);
                             <li><a href="{{route('about-us')}}" class="nav-link d-inline-block">{!! __('footer.line_2')!!}</a></li>
                             <li><a href="{{route('our-teachers')}}" class="nav-link d-inline-block">{!! __('footer.line_3')!!}</a></li>
                             <li><a href="{{route('contact-us')}}" class="nav-link d-inline-block">{!! __('footer.line_4')!!}</a></li>
-                            <li><a href="{{route('partner-university')}}" class="nav-link d-inline-block">{!! __('footer.line_5')!!}</a></li>
+                            <!-- <li><a href="{{route('partner-university')}}" class="nav-link d-inline-block">{!! __('footer.line_5')!!}</a></li> -->
 
-                            {{-- <li><a href="https://www.ustudious.com/" class="nav-link" target="_blank">E-Ascencia Business</a></li> --}}
+                            {{-- <li><a href="https://www.ustudious.com/" class="nav-link" target="_blank">E-PBA Business</a></li> --}}
 
                         </ul>
                     </div>
@@ -75,8 +75,8 @@ $setting = App\Models\SiteSetting::find(1);
                         <!-- list -->
                         <h3 class="fw-bold mb-2">{!! __('footer.line_12')!!}</h3>
                         <ul class="list-unstyled nav nav-footer flex-column nav-x-0">
-                            <li><a href="{{route('terms-and-conditions')}}" class="nav-link d-inline-block">{!! __('footer.line_13')!!}</a></li>
-                            <li><a href="{{route('privacy-policy')}}" class="nav-link d-inline-block">{!! __('footer.line_14')!!}</a></li>
+                            <!-- <li><a href="{{route('terms-and-conditions')}}" class="nav-link d-inline-block">{!! __('footer.line_13')!!}</a></li>
+                            <li><a href="{{route('privacy-policy')}}" class="nav-link d-inline-block">{!! __('footer.line_14')!!}</a></li> -->
                             <li><a href="{{route('faq')}}" class="nav-link d-inline-block">{!! __('footer.line_15')!!}</a></li>
                             <li><a href="{{route('cookies')}}" class="nav-link d-inline-block">{!! __('footer.line_16')!!}</a></li>
                             {{-- <li><a href="#" onclick="return false;" class="nav-link">Sitemap</a></li> --}}
@@ -102,7 +102,7 @@ $setting = App\Models\SiteSetting::find(1);
                         @endif
                         <p class="mb-0">
                             {!! __('footer.line_18')!!}
-                            <a href="mailto:info@eascencia.mt" class="color-blue d-inline-block">{!! __('footer.line_19')!!}</a>
+                            <a href="mailto:info@paris-business-academy.com" class="color-blue d-inline-block">{!! __('footer.line_19')!!}</a>
                         </p>
                      
                         {{-- <p>
@@ -111,20 +111,12 @@ $setting = App\Models\SiteSetting::find(1);
                         </p> --}}
                     </div>
                     <div class="fs-6 mt-3">
-                    <a href="https://www.facebook.com/people/E-Ascencia-Malta/61559646792486/" target="_blank"><img class="social-logo mb-2 "
+                    <a href="https://www.facebook.com/parisbusinessacademy/" target="_blank"><img class="social-logo mb-2 "
                             src="{{ asset('frontend/images/social/social-media-01.png') }}" alt="social logo"></a>
-                    <a href="https://www.instagram.com/eascencia/" target="_blank"><img class="social-logo mb-2 "
+                    <a href="https://www.instagram.com/paris_business_academy/" target="_blank"><img class="social-logo mb-2 "
                             src="{{ asset('frontend/images/social/social-media-02.png') }}" alt="social logo"></a>
-                    <!-- <a href="https://www.linkedin.com/company/ascencia-malta-business-school/" target="_blank"><img class="social-logo mb-2 "
-                            src="{{ asset('frontend/images/social/social-media-03.png') }}" alt="social logo"></a>
-                    <a href="https://x.com/eascenciamalta" target="_blank"><img class="social-logo mb-2 twitterLogoStyle"
-                            src="{{ asset('frontend/images/social/social-media-09.png') }} " alt="social logo"></a>
-                    <a href="https://www.youtube.com/@E-Ascencia" target="_blank"><img class="social-logo mb-2 twitterLogoStyle"
-                                src="{{ asset('frontend/images/social/social-media-06.png') }} " alt="social logo"></a> -->
-                    {{-- <a href="#" target="_blank" onclick="return false"><img class="social-logo mb-2 "
-                            src="{{ asset('frontend/images/social/social-media-07.png') }}" alt="social logo"></a> --}}
-                    {{-- <a href="https://www.quora.com/profile/E-Ascencia-Malta" target="_blank"><img class="social-logo mb-2 "
-                            src="{{ asset('frontend/images/social/social-media-08.png') }}" alt="social logo"></a> --}}
+         
+           
                     </div>
                 </div>
             </div>
@@ -153,12 +145,12 @@ $setting = App\Models\SiteSetting::find(1);
 
                         <div class="mb-4">
 
-                            <h3 class="fw-bold mb-2">E-Ascencia</h3>
+                            <h3 class="fw-bold mb-2">E-PBA</h3>
                             <ul class="list-unstyled nav nav-footer flex-column nav-x-0">
                                 <li><a href="{{route('about-us')}}" class="nav-link d-inline-block">About Us</a></li>
                                 <li><a href="{{route('our-teachers')}}" class="nav-link d-inline-block">Our Teachers</a></li>
                                 <li><a href="{{route('contact-us')}}" class="nav-link d-inline-block">Contact Us</a></li>
-                                <li><a href="{{route('partner-university')}}" class="nav-link d-inline-block">Approved Partners</a></li>
+                                <!-- <li><a href="{{route('partner-university')}}" class="nav-link d-inline-block">Approved Partners</a></li> -->
 
 
 
@@ -186,8 +178,8 @@ $setting = App\Models\SiteSetting::find(1);
 
                             <h3 class="fw-bold mb-2">Support</h3>
                             <ul class="list-unstyled nav nav-footer flex-column nav-x-0">
-                                <li><a href="{{route('terms-and-conditions')}}" class="nav-link d-inline-block">Terms and Conditions</a></li>
-                                <li><a href="{{route('privacy-policy')}}" class="nav-link d-inline-block">Privacy Policy</a></li>
+                                <!-- <li><a href="{{route('terms-and-conditions')}}" class="nav-link d-inline-block">Terms and Conditions</a></li>
+                                <li><a href="{{route('privacy-policy')}}" class="nav-link d-inline-block">Privacy Policy</a></li> -->
                                 <li><a href="{{route('faq')}}" class="nav-link d-inline-block">FAQ's</a></li>
                                 <li><a href="{{route('cookies')}}" class="nav-link d-inline-block">Cookies</a></li>
 
@@ -208,19 +200,16 @@ $setting = App\Models\SiteSetting::find(1);
                             @endif
                             <p class="mb-0">
                                 Contact:
-                                <a href="mailto:info@eascencia.mt" class="color-blue d-inline-block">info@eascencia.mt</a>
+                                <a href="mailto:info@paris-business-academy.com" class="color-blue d-inline-block">info@paris-business-academy.com</a>
                             </p>
  
                         </div>
                         <div class="fs-6 mt-3">
-                        <a href="https://www.facebook.com/people/E-Ascencia-Malta/61559646792486/" target="_blank"><img class="social-logo mb-2 "
+                        <a href="https://www.facebook.com/parisbusinessacademy/" target="_blank"><img class="social-logo mb-2 "
                                 src="{{ asset('frontend/images/social/social-media-01.png') }}" alt="social logo"></a>
-                        <a href="https://www.instagram.com/eascencia/" target="_blank"><img class="social-logo mb-2 "
+                        <a href="https://www.instagram.com/paris_business_academy/" target="_blank"><img class="social-logo mb-2 "
                                 src="{{ asset('frontend/images/social/social-media-02.png') }}" alt="social logo"></a>
-                        <a href="https://www.linkedin.com/company/ascencia-malta-business-school/" target="_blank"><img class="social-logo mb-2 "
-                                src="{{ asset('frontend/images/social/social-media-03.png') }}" alt="social logo"></a>
-                        <a href="https://x.com/eascenciamalta" target="_blank"><img class="social-logo mb-2 twitterLogoStyle"
-                                src="{{ asset('frontend/images/social/social-media-09.png') }} " alt="social logo"></a>
+                
 
                         </div>
                     </div>
