@@ -1980,7 +1980,7 @@
                         <div class=" ps-lg-8 col-xl-7 col-md-7 col-12">
                             <div>
                                 <h2 class="h1 text-white mb-3 fw-bold color-green">{{ __('static.beginyour_ljn') }}</h2>
-                                <p style="color:black"class=" fs-4 mb-2 mb-md-2">{{ __('static.ljnsubheading') }}</p>
+                                <p style="color:white"class=" fs-4 mb-2 mb-md-2">{{ __('static.ljnsubheading') }}</p>
                                     @if (!Auth::check())
                                         <a href="{{route('login')}}"><button class="btn btn-dark btn-main-3 ">{{ __('static.ljnbtn') }}</button></a>
                                     @elseif (Auth::check() && Auth::user()->role == 'user')
