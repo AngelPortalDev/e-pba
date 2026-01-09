@@ -507,7 +507,7 @@ body {
   </div>
  @yield('content')
  <!-- Cookie Consent Banner -->
- <div id="cookieConsentBanner" style="position: fixed; bottom: 0; width: 100%; background-color: #1a1a1a; color: #fff; padding: 20px 30px; text-align: center; z-index: 9999; border-radius: 12px 12px 0 0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); display: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: transform 0.3s ease-in-out;">
+ <!-- <div id="cookieConsentBanner" style="position: fixed; bottom: 0; width: 100%; background-color: #1a1a1a; color: #fff; padding: 20px 30px; text-align: center; z-index: 9999; border-radius: 12px 12px 0 0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); display: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: transform 0.3s ease-in-out;">
   <p style="margin: 0; font-size: 16px; line-height: 1.5; display: inline-block;">
       <strong>We use cookies</strong> to improve your experience on our site. By continuing to use this site, you accept our
       <a href="/privacy-policy" target="_blank" style="color: #62c9f3; text-decoration: none;">Privacy Policy</a>.
@@ -523,7 +523,7 @@ body {
       Customize Settings
     </button>
   </div>
-</div>
+</div> -->
 
 <!-- Popup for Customize Settings -->
 <div id="customizeSettingsModal" style="display: none; position: fixed; bottom: 20px; left: 20px; width: 80%; max-width: 500px; background: white; box-shadow: 0px 0px 10px rgba(0,0,0,0.2); padding: 20px; z-index: 10000; border-radius: 7px; overflow-y: auto;">
