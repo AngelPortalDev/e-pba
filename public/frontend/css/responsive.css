@@ -26,10 +26,7 @@
         width: max-content;
      }
      .language-course-title-styling{
-        height: 51px !important;
-     }
-     .level-title-styling{
-        height: 51px !important;
+        height: 40px !important;
      }
 }
 
@@ -160,11 +157,8 @@
    .diploma-title-styling,.certificate-title-styling,.master-title-styling, .dba-title-styling, .language-course-title-styling{
         height: 51px;
      }
-    .language-course-title-styling{
-        height: 51px !important;
-     }
-     .level-title-styling{
-        height: 51px !important;
+       .language-course-title-styling{
+        height: 40px !important;
      }
 
      /* .navbar-expand-lg .headeroffcampusTwo{
@@ -329,7 +323,7 @@
         width: 52px;
      }
      .language-course-title-styling{
-        height: 72px !important;
+        height: 60px !important;
      }
 }
 
@@ -341,11 +335,10 @@
         /* margin-left: -24rem !important; */
         margin-left: -25rem !important;
     }
-     .award-title-styling, .master-title-styling, .diploma-title-styling, .dba-title-styling, .certificate-title-styling{
+     .award-title-styling, .master-title-styling, .diploma-title-styling, .dba-title-styling, .language-course-title-styling, .certificate-title-styling{
         /* height: 51px; */
         height: 72px;
      }
-     
          .course-video-player-page #menu-button{
             width: 20px;
             height: 20px;
@@ -354,7 +347,7 @@
             background-color: #dae138;
          }
          .language-course-title-styling{
-            height: 49px !important;
+            height: 60px !important;
          }
 }
 
@@ -518,13 +511,11 @@
         font-size: 1rem;
      }
      .hero-section .carousel-control-prev{
-        /* top: 28rem; */
-        top: 24rem;
+        top: 28rem;
         left: -3.5vw;
     }
     .hero-section .carousel-control-next{
-        /* top: 28rem; */
-        top: 24rem;
+        top: 28rem;
         right: -3.5vw;
     }
     .couser-detail-modal-close-button{
@@ -554,9 +545,7 @@
     height: 20px;
     border-radius: 5px;
     padding: 15px 15px;
-    /* background-color: #dae138 !important; */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    background-color: #ffffff !important;
+    background-color: #dae138 !important;
 }
 .otp-verification{
     width: 100%;
@@ -603,7 +592,7 @@
         height: 72px;
      }
      .language-course-title-styling{
-        height: 72px !important;
+        height: 50px !important;
      }
 }
 
@@ -706,9 +695,6 @@
         }
     .award-title-styling, .master-title-styling, .dba-title-styling, .language-course-title-styling, .diploma-title-styling, .certificate-title-styling{
         height: 72px;
-    }
-    .level-title-styling{
-        height: 31px;
     }
     .french_icon_style{
         height: 48px;
