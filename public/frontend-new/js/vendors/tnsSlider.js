@@ -175,41 +175,6 @@ document.querySelector(".sliderFirst") &&
       controlsContainer: "#sliderTenControls",
       responsive: { 768: { items: 2 }, 992: { items: 3 } ,1200: { items: 4 }},
     }),
-    document.querySelector(".sliderEleventh") &&
-    tns({
-      container: ".sliderEleventh",
-      loop: false,
-      startIndex: 1,
-      items: 1,
-      nav: !1,
-      autoplay: !0,
-      swipeAngle: !1,
-      speed: 400,
-      autoplayButtonOutput: !1,
-      mouseDrag: !0,
-      lazyload: !0,
-      gutter: 20,
-      controlsContainer: "#sliderElevenControls",
-      responsive: { 768: { items: 2 }, 992: { items: 3 } ,1200: { items: 4 }},
-    }),
-    document.querySelector(".sliderTwelveth") &&
-    tns({
-      container: ".sliderTwelveth",
-      loop: false,
-      startIndex: 1,
-      items: 1,
-      nav: !1,
-      autoplay: !0,
-      swipeAngle: !1,
-      speed: 400,
-      autoplayButtonOutput: !1,
-      mouseDrag: !0,
-      lazyload: !0,
-      gutter: 20,
-      controlsContainer: "#sliderTwelveControls",
-      responsive: { 768: { items: 2 }, 992: { items: 3 } ,1200: { items: 4 }},
-    }),
-    
 
 
 
