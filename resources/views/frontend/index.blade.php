@@ -138,7 +138,7 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/hero-img-1-main.webp') }}" alt="Student using a laptop for online learning on E-PBA's platform"
+                            <img src="{{ asset('frontend/images/hero/hero-img-1-main.png') }}" alt="Student using a laptop for online learning on E-PBA's platform"
                                 class="img-fluid"/>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/hero-img-2-main.webp') }}" alt="Inspiring educational journey with Ascencia Malta mentors"
+                            <img src="{{ asset('frontend/images/hero/hero-img-2-main.png') }}" alt="Inspiring educational journey with Ascencia Malta mentors"
                                 class="img-fluid"/>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 text-lg-end text-center">
-                            <img src="{{ asset('frontend/images/hero/blockchain_certificate.png') }}" alt="Accredited programs recognized by the European Qualifications Framework"
+                            <img src="{{ asset('frontend/images/hero/hero-img-3-main.png') }}" alt="Accredited programs recognized by the European Qualifications Framework"
                                 class="img-fluid"/>
                         </div>
                     </div>
